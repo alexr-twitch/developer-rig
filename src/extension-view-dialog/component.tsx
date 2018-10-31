@@ -58,6 +58,12 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
     orientation: DefaultMobileOrientation,
   }
 
+  private opaqueIdInput: HTMLInputElement;
+
+  public componentDidMount() {
+    this.opaqueIdInput.focus();
+  }
+
   public onChange = (input: React.FormEvent<HTMLInputElement>) => {
     const { checked, name, type, value } = input.currentTarget;
     this.setState({ [name]: type === 'checkbox' ? checked : value });
@@ -327,7 +333,7 @@ export class ExtensionViewDialog extends React.Component<ExtensionViewDialogProp
                   </div>
                   <div className='opaque_id-input'>
                     <label className="opaque-id-label">Custom Opaque ID</label>
-                    <input type="text" name="opaqueId" onChange={this.onChange} />
+                    <input type="text" name="opaqueId" onChange={this.onChange} ref={(input) => { this.opaqueIdInput = input; }} />
                   </div>
                 </div>
               </div>
