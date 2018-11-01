@@ -1,7 +1,5 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { CreateProjectDialog } from './component';
-import { ExtensionViewType } from '../constants/extension-coordinator';
-import { generateManifest } from '../util/generate-manifest';
 import { LocalStorageKeys } from '../constants/rig';
 
 Math.random = () => .25;
@@ -49,9 +47,7 @@ describe('<CreateProjectDialog />', () => {
   it('fetches extension manifest', () => {
     const value = 'value';
     const { wrapper } = setupShallow();
-    ['localName', 'projectFolderPath'].forEach((name: string) => {
-      wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value } });
-    })
+    wrapper.find('input[name="projectFolderPath"]').simulate('change', { currentTarget: { name: 'projectFolderPath', value } });
     wrapper.find('.project-dialog-property__button').simulate('click');
     expect(api.fetchExtensionManifest).toHaveBeenCalledTimes(1);
   });
@@ -76,16 +72,13 @@ describe('<CreateProjectDialog />', () => {
           backendCommand: '',
           frontendCommand: '',
           frontendFolderName: '',
-          isLocal: true,
-          manifest: generateManifest('https://localhost.rig.twitch.tv:8080', login, value, [ExtensionViewType.Panel]),
+          manifest: {},
           projectFolderPath: value,
           secret: 'test',
         });
       }),
     });
-    ['localName', 'projectFolderPath'].forEach((name: string) => {
-      wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value } });
-    })
+    wrapper.find('input[name="projectFolderPath"]').simulate('change', { currentTarget: { name: 'projectFolderPath', value } });
     wrapper.find('input[value="none"]').simulate('change', { currentTarget: { name: 'codeGenerationOption', value: 'none' } });
     wrapper.find('.bottom-bar__save').simulate('click');
   });

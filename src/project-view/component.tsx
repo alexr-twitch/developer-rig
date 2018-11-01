@@ -52,12 +52,7 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
 
   public onChange = (input: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = input.currentTarget;
-    if (name === 'name') {
-      if (this.props.rigProject.isLocal) {
-        const manifest = Object.assign({}, this.props.rigProject.manifest, { name: value });
-        this.props.onChange({ manifest } as any as RigProject);
-      }
-    } else {
+    if (name !== 'name') {
       this.props.onChange({ [name]: value } as any as RigProject);
     }
   }
@@ -111,7 +106,7 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
           if (!frontendPort) {
             throw new Error('Cannot determine front-end port from extension');
           }
-          await hostFrontend(rigProject.frontendFolderName, rigProject.isLocal, frontendPort, rigProject.projectFolderPath);
+          await hostFrontend(rigProject.frontendFolderName, frontendPort, rigProject.projectFolderPath);
           this.setState({ frontendResult: HostingResult.Started });
         }
         this.props.refreshViews();
@@ -144,8 +139,8 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
   }
 
   private refreshManifest = async () => {
-    const { isLocal, secret, manifest: { id: clientId, version } } = this.props.rigProject;
-    const manifest = await fetchUserExtensionManifest(isLocal, this.props.userId, secret, clientId, version);
+    const { secret, manifest: { id: clientId, version } } = this.props.rigProject;
+    const manifest = await fetchUserExtensionManifest(this.props.userId, secret, clientId, version);
     this.setState({ version: manifest.version });
     this.props.onChange({ manifest } as any as RigProject);
   }
@@ -153,8 +148,8 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
   private updateByVersion = async () => {
     this.setState({ updateResult: 'fetching...' });
     try {
-      const { isLocal, secret, manifest: { id: clientId } } = this.props.rigProject;
-      const manifest = await fetchUserExtensionManifest(isLocal, this.props.userId, secret, clientId, this.state.version);
+      const { secret, manifest: { id: clientId } } = this.props.rigProject;
+      const manifest = await fetchUserExtensionManifest(this.props.userId, secret, clientId, this.state.version);
       this.setState({ updateResult: '' });
       this.props.onChange({ manifest } as any as RigProject);
     } catch (ex) {
@@ -174,7 +169,6 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
             <div className="project-view-property__name">Project Name</div>
             <input className="project-view-property__input project-view-property__input--half" type="text" name="name" value={rigProject.manifest.name} onChange={this.onChange} />
           </label>
-          {!rigProject.isLocal && <>
             <label className="project-view-property project-view-grid__column-2">
               <div className="project-view-property__name">Version</div>
               <input className="project-view-property__input project-view-property__input--third" type="text" name="version" value={this.state.version} onChange={this.onChangeVersion} />
@@ -183,7 +177,6 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
               <button className="project-view__button" onClick={this.updateByVersion}>Update</button>
               <div title="This is the result of updating the extension by version." className="project-view-property__result">{this.state.updateResult}</div>
             </div>
-          </>}
           <label className="project-view-property project-view-grid__column-1-2" title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute.">
             <div className="project-view-property__name">Front-end Files Location</div>
             <input className="project-view-property__input" type="text" name="frontendFolderName" value={rigProject.frontendFolderName} onChange={this.onChange} />
@@ -224,8 +217,6 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
             <div className="project-view-property__name">Client ID</div>
             <div className="project-view-property__value">{rigProject.manifest.id}</div>
           </label>
-          {!rigProject.isLocal && (
-            <>
               <label className="project-view-property project-view-grid__column-1">
                 <button className="project-view__button project-view__button--first" onClick={this.refreshManifest}>Refresh Manifest</button>
               </label>
@@ -237,8 +228,6 @@ export class ProjectView extends React.Component<ProjectViewProps, State>{
                 click "Manage" for version {rigProject.manifest.version} then
                 click "Asset Hosting" to check and adjust if needed.
               </label>
-            </>
-          )}
         </div>
         <div className="project-view__vertical-bar" />
         <div className="project-view__section">

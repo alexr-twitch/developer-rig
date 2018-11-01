@@ -30,7 +30,6 @@ ShallowWrapper {
     editViewHandler={[Function]}
     extensionViews={Array []}
     isDisplayed={true}
-    isLocal={true}
     manifest={
         Object {
             "authorName": "test",

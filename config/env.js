@@ -83,7 +83,6 @@ function getClientEnvironment(publicUrl) {
     );
 
   // Twitch Dev Rig custom configs
-  // EXT_CLIENT_ID and EXT_SECRET
   raw['EXT_CLIENT_ID'] = process.env.EXT_CLIENT_ID || '';
   raw['EXT_SECRET'] = process.env.EXT_SECRET || '';
   raw['EXT_VERSION'] = process.env.EXT_VERSION || '';

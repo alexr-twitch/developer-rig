@@ -23,7 +23,6 @@ const api = require.requireMock('../util/api');
 describe('<ProjectView />', () => {
   const rigProject = {
     extensionViews: [] as RigExtensionView[],
-    isLocal: true,
     projectFolderPath: 'test',
     manifest: createExtensionManifestForTest(),
     secret: 'test',
@@ -38,37 +37,14 @@ describe('<ProjectView />', () => {
     refreshViews: jest.fn(),
   }));
 
-  function setupOnlineShallow() {
-    return setupShallow({
-      rigProject: {
-        ...rigProject,
-        isLocal: false,
-      }
-    });
-  }
-
-  it('renders local correctly', () => {
+  it('renders correctly', () => {
     const { wrapper } = setupShallow();
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders online correctly', () => {
-    const { wrapper } = setupOnlineShallow();
-    expect(wrapper).toMatchSnapshot();
-  });
-
   describe('onChange', () => {
-    it('invokes name for local', () => {
+    it('invokes', () => {
       const { wrapper } = setupShallow();
-      const instance = wrapper.instance() as ProjectView;
-      const name = 'name';
-      wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value: name } });
-      wrapper.update();
-      expect(instance.props.onChange).toHaveBeenCalled();
-    });
-
-    it('invokes for online', () => {
-      const { wrapper } = setupOnlineShallow();
       const instance = wrapper.instance() as ProjectView;
       const name = 'projectFolderPath';
       wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value: name } });
@@ -78,7 +54,7 @@ describe('<ProjectView />', () => {
   });
 
   it('invokes onChangeVersion', () => {
-    const { wrapper } = setupOnlineShallow();
+    const { wrapper } = setupShallow();
     const instance = wrapper.instance() as ProjectView;
     const name = 'version';
     wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value: name } });
@@ -88,13 +64,13 @@ describe('<ProjectView />', () => {
   });
 
   it('invokes fetchExtensionManifest through refreshManifest', () => {
-    const { wrapper } = setupOnlineShallow();
+    const { wrapper } = setupShallow();
     wrapper.find('.project-view__button--first').simulate('click');
     expect(api.fetchExtensionManifest).toHaveBeenCalled();
   });
 
   it('invokes fetchExtensionManifest through updateByVersion', () => {
-    const { wrapper } = setupOnlineShallow();
+    const { wrapper } = setupShallow();
     wrapper.find('.project-view__button').first().simulate('click');
     expect(api.fetchExtensionManifest).toHaveBeenCalled();
   });
@@ -105,13 +81,13 @@ describe('<ProjectView />', () => {
       const instance = wrapper.instance() as ProjectView;
       instance.props.rigProject.frontendCommand = '';
       wrapper.update();
-      wrapper.find('.project-view__button').first().simulate('click');
+      wrapper.find('.project-view__button').at(1).simulate('click');
       expect(api.hostFrontend).toHaveBeenCalledTimes(1);
     });
 
     it('starts custom hosting', () => {
       const { wrapper } = setupShallow();
-      wrapper.find('.project-view__button').first().simulate('click');
+      wrapper.find('.project-view__button').at(1).simulate('click');
       expect(api.startFrontend).toHaveBeenCalledTimes(1);
     });
 
@@ -121,7 +97,7 @@ describe('<ProjectView />', () => {
       instance.props.rigProject.manifest.views = {};
       instance.props.rigProject.frontendCommand = '';
       wrapper.update();
-      wrapper.find('.project-view__button').first().simulate('click');
+      wrapper.find('.project-view__button').at(1).simulate('click');
       expect(instance.state.frontendResult).toEqual('Cannot determine front-end port from extension');
     });
 
@@ -129,7 +105,7 @@ describe('<ProjectView />', () => {
       const { wrapper } = setupShallow();
       const instance = wrapper.instance() as ProjectView;
       instance.state.frontendResult = 'running';
-      wrapper.find('.project-view__button').first().simulate('click');
+      wrapper.find('.project-view__button').at(1).simulate('click');
       expect(api.stopHosting).toHaveBeenCalledTimes(1);
     });
   });
@@ -137,7 +113,7 @@ describe('<ProjectView />', () => {
   describe('back-end', () => {
     it('starts', () => {
       const { wrapper } = setupShallow();
-      wrapper.find('.project-view__button').at(1).simulate('click');
+      wrapper.find('.project-view__button').at(2).simulate('click');
       expect(api.startBackend).toHaveBeenCalledTimes(1);
     });
 
@@ -145,7 +121,7 @@ describe('<ProjectView />', () => {
       const { wrapper } = setupShallow();
       const instance = wrapper.instance() as ProjectView;
       instance.state.backendResult = 'running';
-      wrapper.find('.project-view__button').at(1).simulate('click');
+      wrapper.find('.project-view__button').at(2).simulate('click');
       expect(api.stopHosting).toHaveBeenCalledTimes(1);
     });
   });
@@ -163,7 +139,7 @@ describe('<ProjectView />', () => {
     it('opens window', () => {
       globalAny.open = jest.fn();
       const { wrapper } = setupShallow();
-      wrapper.find('.project-view__button').at(2).simulate('click');
+      wrapper.find('.project-view__button').at(4).simulate('click');
       expect(globalAny.open).toHaveBeenCalledWith('https://www.twitch.tv/videos/239080621', 'developer-rig-help');
     });
   });

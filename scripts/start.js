@@ -10,9 +10,6 @@ const cmdOptions = commandLineArgs([
   }, {
     name: 'config',
     alias: 'c',
-  }, {
-    name: 'local',
-    alias: 'l',
   },
 ]);
 // Do this as the first thing so that any code reading it knows the right env.
@@ -54,25 +51,10 @@ if (fs.existsSync('.release')) {
   process.env.GIT_RELEASE = fs.readFileSync('.release', 'utf8').trim();
 }
 
-// Set local mode, if requested.
-let extension;
-if (cmdOptions.local) {
-  const localFileLocation = path.resolve(process.cwd(), cmdOptions.local);
-  const { id: clientId, version } = extension = require(localFileLocation);
-  if (!process.env.EXT_CLIENT_ID) {
-    process.env.EXT_CLIENT_ID = clientId;
-  }
-  if (!process.env.EXT_VERSION) {
-    process.env.EXT_VERSION = version;
-  }
-}
 if (process.argv.length > 2) {
   console.log('clientId:', process.env.EXT_CLIENT_ID);
   console.log('version:', process.env.EXT_VERSION);
   console.log('secret:', process.env.EXT_SECRET);
-}
-if (!process.env.EXT_SECRET) {
-  process.env.EXT_SECRET = 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk';
 }
 
 // Makes the script crash on unhandled rejections instead of silently
@@ -116,9 +98,7 @@ if (process.env.HOST) {
 }
 
 // Create a call-back to configure the WebPack application.
-let socketServer, wss;
 function configureApp(app) {
-  ({ socketServer, wss } = require('./local-mode')(app, extension) | {});
   require('./project')(app);
 }
 
@@ -148,8 +128,6 @@ devServer.listen(DEFAULT_PORT, HOST, err => {
 
 ['SIGINT', 'SIGTERM'].forEach(function(sig) {
   process.on(sig, function() {
-    wss && wss.close();
-    socketServer && socketServer.close();
     devServer.close();
     process.exit();
   });

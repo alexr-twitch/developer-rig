@@ -16,7 +16,6 @@ const defaultPropGenerator = () => ({
   type: ExtensionAnchor.Panel,
   mode: ExtensionMode.Viewer,
   iframe: '',
-  isLocal: false,
   isPopout: false,
   bindIframeToParent: jest.fn(),
 });
@@ -25,20 +24,7 @@ const setupShallow = setupShallowTest(ExtensionFrame, defaultPropGenerator);
 const setupMount = setupMountTest(ExtensionFrame, defaultPropGenerator);
 
 describe('<ExtensionFrame />', () => {
-  it('local onload postMessages data correctly', () => {
-    const { wrapper } = setupMount({ isLocal: true });
-    const mockIframeRef: any = {
-      contentWindow: {
-        postMessage: jest.fn(),
-      },
-    };
-    const instance = wrapper.instance() as ExtensionFrame;
-    instance.iframe = mockIframeRef;
-    instance.extensionFrameInit();
-    expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith(createExpected('panel', true), '*');
-  });
-
-  it('online onload postMessages data correctly', () => {
+  it('postMessages data correctly', () => {
     const { wrapper } = setupMount();
     const mockIframeRef: any = {
       contentWindow: {
@@ -51,23 +37,7 @@ describe('<ExtensionFrame />', () => {
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith(createExpected('panel'), '*');
   });
 
-  it('local onload postMessages data correctly when platform is mobile', () => {
-    const { wrapper } = setupMount({
-      isLocal: true,
-      type: ExtensionViewType.Mobile,
-    });
-    const mockIframeRef: any = {
-      contentWindow: {
-        postMessage: jest.fn(),
-      },
-    };
-    const instance = wrapper.instance() as ExtensionFrame;
-    instance.iframe = mockIframeRef;
-    instance.extensionFrameInit();
-    expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith(createExpected('mobile', true), '*');
-  });
-
-  it('online onload postMessages data correctly when platform is mobile', () => {
+  it('onload postMessages data correctly when platform is mobile', () => {
     const { wrapper } = setupMount({
       type: ExtensionViewType.Mobile,
     });
@@ -82,18 +52,7 @@ describe('<ExtensionFrame />', () => {
     expect(mockIframeRef.contentWindow.postMessage).toHaveBeenCalledWith(createExpected('mobile'), '*');
   });
 
-  describe('when in local live config mode', () => {
-    it('renders correctly', () => {
-      const { wrapper } = setupShallow({
-        isLocal: true,
-        mode: ExtensionMode.Dashboard,
-        type: ExtensionViewType.LiveConfig,
-      });
-      expect(wrapper).toMatchSnapshot();
-    });
-  });
-
-  describe('when in online live config mode', () => {
+  describe('when in live config mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
         mode: ExtensionMode.Dashboard,
@@ -103,18 +62,7 @@ describe('<ExtensionFrame />', () => {
     });
   });
 
-  describe('when in local config mode', () => {
-    it('renders correctly', () => {
-      const { wrapper } = setupShallow({
-        isLocal: true,
-        mode: ExtensionMode.Config,
-        type: ExtensionViewType.Config,
-      });
-      expect(wrapper).toMatchSnapshot();
-    });
-  });
-
-  describe('when in online config mode', () => {
+  describe('when in config mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
         mode: ExtensionMode.Config,
@@ -124,18 +72,7 @@ describe('<ExtensionFrame />', () => {
     });
   });
 
-  describe('when in local panel mode', () => {
-    it('renders correctly', () => {
-      const { wrapper } = setupShallow({
-        isLocal: true,
-        mode: ExtensionMode.Viewer,
-        type: ExtensionAnchor.Panel,
-      });
-      expect(wrapper).toMatchSnapshot();
-    });
-  });
-
-  describe('when in online panel mode', () => {
+  describe('when in panel mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
         mode: ExtensionMode.Viewer,
@@ -145,18 +82,7 @@ describe('<ExtensionFrame />', () => {
     });
   });
 
-  describe('when in local video overlay mode', () => {
-    it('renders correctly', () => {
-      const { wrapper } = setupShallow({
-        isLocal: true,
-        mode: ExtensionMode.Viewer,
-        type: ExtensionAnchor.Overlay,
-      });
-      expect(wrapper).toMatchSnapshot();
-    });
-  });
-
-  describe('when in online video overlay mode', () => {
+  describe('when in video overlay mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
         mode: ExtensionMode.Viewer,
@@ -166,7 +92,7 @@ describe('<ExtensionFrame />', () => {
     });
   });
 
-  function createExpected(anchor: string, isLocal?: boolean) {
+  function createExpected(anchor: string) {
     const expected = {
       action: 'extension-frame-init',
       channelId: 'twitch',
@@ -236,12 +162,6 @@ describe('<ExtensionFrame />', () => {
       },
       frameId: '0',
     };
-    if (isLocal) {
-      ['config', 'component', 'liveConfig', 'mobile', 'panel', 'videoOverlay'].forEach((viewName) => {
-        const views: { [viewName: string]: { viewerUrl: string } } = expected.parameters.extension.views;
-        views[viewName].viewerUrl += '?developer_rig=local';
-      });
-    }
     return expected;
   }
 });

@@ -13,7 +13,6 @@ describe('<ExtensionView />', () => {
     configuration: {},
     extension: createExtensionForTest(),
     role: ViewerTypes.Broadcaster,
-    isLocal: true,
     deleteViewHandler: jest.fn(),
     openEditViewHandler: jest.fn(),
     iframe: '',

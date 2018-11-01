@@ -33,7 +33,6 @@ interface Props {
   configuration: ExtensionCoordinator.Configuration;
   extension: ExtensionCoordinator.ExtensionObject;
   role?: string;
-  isLocal: boolean;
   deleteViewHandler?: (id: string) => void;
   openEditViewHandler?: (id: string) => void;
   mockApiEnabled: boolean;
@@ -95,7 +94,6 @@ export class ExtensionView extends React.Component<Props, State> {
       configuration: this.props.configuration,
       extension: this.props.extension,
       installationAbilities: view.features,
-      isLocal: this.props.isLocal,
     };
     const position = { x: view.x, y: view.y };
     let renderedView = null;

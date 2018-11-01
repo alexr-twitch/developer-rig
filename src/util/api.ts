@@ -57,9 +57,9 @@ export async function createProject(projectFolderPath: string, codeGenerationOpt
   return await localApi.post(path, { projectFolderPath, codeGenerationOption, exampleIndex });
 }
 
-export async function hostFrontend(frontendFolderPath: string, isLocal: boolean, port: number, projectFolderPath: string) {
+export async function hostFrontend(frontendFolderPath: string, port: number, projectFolderPath: string) {
   const path = '/frontend';
-  return await localApi.post(path, { frontendFolderPath, isLocal, port, projectFolderPath });
+  return await localApi.post(path, { frontendFolderPath, port, projectFolderPath });
 }
 
 export async function startFrontend(frontendFolderPath: string, frontendCommand: string, projectFolderPath: string) {
@@ -112,9 +112,8 @@ export async function fetchExamples(): Promise<Example[]> {
   return await localApi.get<Example[]>(path);
 }
 
-export async function fetchExtensionManifest(isLocal: boolean, id: string, version: string, jwt: string): Promise<ExtensionManifest> {
-  const api = new Api({ isLocal });
-  const response = await api.get<{ extensions: any[] }>(`/extensions/${id}/${version}`, {
+export async function fetchExtensionManifest(id: string, version: string, jwt: string): Promise<ExtensionManifest> {
+  const response = await onlineApi.get<{ extensions: any[] }>(`/extensions/${id}/${version}`, {
     Authorization: `Bearer ${jwt}`,
     'Client-ID': id,
   });

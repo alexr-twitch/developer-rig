@@ -21,7 +21,6 @@ ShallowWrapper {
             "extensionViews": Array [],
             "frontendCommand": "test",
             "frontendFolderName": "test",
-            "isLocal": true,
             "manifest": Object {
               "authorName": "test",
               "bitsEnabled": true,

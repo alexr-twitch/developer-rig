@@ -16,7 +16,6 @@ interface Props {
   configurations: Configurations;
   extensionViews: RigExtensionView[];
   isDisplayed: boolean;
-  isLocal: boolean;
   manifest: ExtensionManifest;
   secret: string;
   createExtensionViewHandler: (extensionViewDialogState: ExtensionViewDialogState) => Promise<void>;
@@ -113,7 +112,6 @@ export class ExtensionViewContainer extends React.Component<Props, State> {
             configuration={configuration}
             extension={extension}
             role={view.mode === ExtensionMode.Viewer ? view.role : ConfigNames[view.mode]}
-            isLocal={this.props.isLocal}
             openEditViewHandler={this.openEditViewDialog}
             deleteViewHandler={this.props.deleteExtensionViewHandler}
             mockApiEnabled={this.state.mockTriggersEnabled}

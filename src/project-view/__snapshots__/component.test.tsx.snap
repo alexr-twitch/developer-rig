@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProjectView /> renders local correctly 1`] = `
+exports[`<ProjectView /> renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -13,7 +13,6 @@ ShallowWrapper {
             "extensionViews": Array [],
             "frontendCommand": "test",
             "frontendFolderName": "test",
-            "isLocal": true,
             "manifest": Object {
               "authorName": "test",
               "bitsEnabled": true,
@@ -96,6 +95,36 @@ ShallowWrapper {
                               value="test"
                     />
           </label>
+          <label
+                    className="project-view-property project-view-grid__column-2"
+          >
+                    <div
+                              className="project-view-property__name"
+                    >
+                              Version
+                    </div>
+                    <input
+                              className="project-view-property__input project-view-property__input--third"
+                              name="version"
+                              onChange={[Function]}
+                              type="text"
+                              value="0.0.1"
+                    />
+          </label>
+          <div
+                    className="project-view-grid__column-3"
+          >
+                    <button
+                              className="project-view__button"
+                              onClick={[Function]}
+                    >
+                              Update
+                    </button>
+                    <div
+                              className="project-view-property__result"
+                              title="This is the result of updating the extension by version."
+                    />
+          </div>
           <label
                     className="project-view-property project-view-grid__column-1-2"
                     title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
@@ -220,6 +249,30 @@ ShallowWrapper {
                               test
                     </div>
           </label>
+          <label
+                    className="project-view-property project-view-grid__column-1"
+          >
+                    <button
+                              className="project-view__button project-view__button--first"
+                              onClick={[Function]}
+                    >
+                              Refresh Manifest
+                    </button>
+          </label>
+          <label
+                    className="project-view-property project-view-grid__column-1-2"
+          >
+                    Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
+                    <a
+                              href="https://dev.twitch.tv/projects/test/files"
+                              target="dev-site"
+                    >
+                              here
+                    </a>
+                     then click "Manage" for version 
+                    0.0.1
+                     then click "Asset Hosting" to check and adjust if needed.
+          </label>
 </div>,
         <div
           className="project-view__vertical-bar"
@@ -311,7 +364,36 @@ ShallowWrapper {
                             value="test"
               />
 </label>,
-            false,
+            <label
+              className="project-view-property project-view-grid__column-2"
+>
+              <div
+                            className="project-view-property__name"
+              >
+                            Version
+              </div>
+              <input
+                            className="project-view-property__input project-view-property__input--third"
+                            name="version"
+                            onChange={[Function]}
+                            type="text"
+                            value="0.0.1"
+              />
+</label>,
+            <div
+              className="project-view-grid__column-3"
+>
+              <button
+                            className="project-view__button"
+                            onClick={[Function]}
+              >
+                            Update
+              </button>
+              <div
+                            className="project-view-property__result"
+                            title="This is the result of updating the extension by version."
+              />
+</div>,
             <label
               className="project-view-property project-view-grid__column-1-2"
               title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
@@ -437,7 +519,30 @@ ShallowWrapper {
                             test
               </div>
 </label>,
-            false,
+            <label
+              className="project-view-property project-view-grid__column-1"
+>
+              <button
+                            className="project-view__button project-view__button--first"
+                            onClick={[Function]}
+              >
+                            Refresh Manifest
+              </button>
+</label>,
+            <label
+              className="project-view-property project-view-grid__column-1-2"
+>
+              Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
+              <a
+                            href="https://dev.twitch.tv/projects/test/files"
+                            target="dev-site"
+              >
+                            here
+              </a>
+               then click "Manage" for version 
+              0.0.1
+               then click "Asset Hosting" to check and adjust if needed.
+</label>,
           ],
           "className": "project-view__section project-view-grid",
         },
@@ -496,7 +601,109 @@ ShallowWrapper {
             ],
             "type": "label",
           },
-          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="project-view-property__name"
+>
+                  Version
+</div>,
+                <input
+                  className="project-view-property__input project-view-property__input--third"
+                  name="version"
+                  onChange={[Function]}
+                  type="text"
+                  value="0.0.1"
+/>,
+              ],
+              "className": "project-view-property project-view-grid__column-2",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Version",
+                  "className": "project-view-property__name",
+                },
+                "ref": null,
+                "rendered": "Version",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "project-view-property__input project-view-property__input--third",
+                  "name": "version",
+                  "onChange": [Function],
+                  "type": "text",
+                  "value": "0.0.1",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="project-view__button"
+                  onClick={[Function]}
+>
+                  Update
+</button>,
+                <div
+                  className="project-view-property__result"
+                  title="This is the result of updating the extension by version."
+/>,
+              ],
+              "className": "project-view-grid__column-3",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Update",
+                  "className": "project-view__button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Update",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": "project-view-property__result",
+                  "title": "This is the result of updating the extension by version.",
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -911,7 +1118,76 @@ ShallowWrapper {
             ],
             "type": "label",
           },
-          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className="project-view__button project-view__button--first"
+                onClick={[Function]}
+>
+                Refresh Manifest
+</button>,
+              "className": "project-view-property project-view-grid__column-1",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Refresh Manifest",
+                "className": "project-view__button project-view__button--first",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Refresh Manifest",
+              "type": "button",
+            },
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
+                <a
+                  href="https://dev.twitch.tv/projects/test/files"
+                  target="dev-site"
+>
+                  here
+</a>,
+                " then click \\"Manage\\" for version ",
+                "0.0.1",
+                " then click \\"Asset Hosting\\" to check and adjust if needed.",
+              ],
+              "className": "project-view-property project-view-grid__column-1-2",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "here",
+                  "href": "https://dev.twitch.tv/projects/test/files",
+                  "target": "dev-site",
+                },
+                "ref": null,
+                "rendered": "here",
+                "type": "a",
+              },
+              " then click \\"Manage\\" for version ",
+              "0.0.1",
+              " then click \\"Asset Hosting\\" to check and adjust if needed.",
+            ],
+            "type": "label",
+          },
         ],
         "type": "div",
       },
@@ -1237,2763 +1513,35 @@ ShallowWrapper {
                         />
             </label>
             <label
-                        className="project-view-property project-view-grid__column-1-2"
-                        title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
+                        className="project-view-property project-view-grid__column-2"
             >
                         <div
                                     className="project-view-property__name"
                         >
-                                    Front-end Files Location
-                        </div>
-                        <input
-                                    className="project-view-property__input"
-                                    name="frontendFolderName"
-                                    onChange={[Function]}
-                                    type="text"
-                                    value="test"
-                        />
-            </label>
-            <label
-                        className="project-view-property project-view-grid__column-1-2"
-                        title="This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files."
-            >
-                        <div
-                                    className="project-view-property__name"
-                        >
-                                    Front-end Host Command
-                        </div>
-                        <input
-                                    className="project-view-property__input"
-                                    name="frontendCommand"
-                                    onChange={[Function]}
-                                    placeholder="Leave blank for Developer Rig hosting"
-                                    type="text"
-                                    value="test"
-                        />
-            </label>
-            <div
-                        className="project-view-grid__column-3"
-            >
-                        <button
-                                    className="project-view__button"
-                                    onClick={[Function]}
-                        >
-                                    Activate
-                        </button>
-                        <div
-                                    className="project-view-property__result"
-                                    title="This is the result of the front-end activation command."
-                        />
-            </div>
-            <label
-                        className="project-view-property project-view-grid__column-1-2"
-                        title="This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory."
-            >
-                        <div
-                                    className="project-view-property__name"
-                        >
-                                    Back-end Run Command
-                        </div>
-                        <input
-                                    className="project-view-property__input"
-                                    name="backendCommand"
-                                    onChange={[Function]}
-                                    type="text"
-                                    value="test"
-                        />
-            </label>
-            <div
-                        className="project-view-grid__column-3"
-            >
-                        <button
-                                    className="project-view__button"
-                                    onClick={[Function]}
-                        >
-                                    Activate
-                        </button>
-                        <div
-                                    className="project-view-property__result"
-                                    title="This is the result of the back-end activation command."
-                        />
-            </div>
-            <label
-                        className="project-view-property project-view-grid__column-1-2"
-            >
-                        <div
-                                    className="project-view-property__name"
-                        >
-                                    Project Folder
-                        </div>
-                        <input
-                                    className="project-view-property__input"
-                                    name="projectFolderPath"
-                                    onChange={[Function]}
-                                    type="text"
-                                    value="test"
-                        />
-            </label>
-            <label
-                        className="project-view-property project-view-grid__column-1-2"
-            >
-                        <div
-                                    className="project-view-property__name"
-                        >
-                                    Extension Types
-                        </div>
-                        <div
-                                    className="project-view-property__value"
-                        >
-                                    Panel, Component
-                        </div>
-            </label>
-            <label
-                        className="project-view-property project-view-grid__column-1-2"
-            >
-                        <div
-                                    className="project-view-property__name"
-                        >
-                                    Client ID
-                        </div>
-                        <div
-                                    className="project-view-property__value"
-                        >
-                                    test
-                        </div>
-            </label>
-</div>,
-          <div
-            className="project-view__vertical-bar"
-/>,
-          <div
-            className="project-view__section"
->
-            <div
-                        className="project-view__title"
-            >
-                        How to Run an Extension in the Rig
-            </div>
-            <ol>
-                        <li
-                                    className="project-view__item"
-                        >
-                                    <div
-                                                className="project-view__item-text project-view__item-text--title"
-                                    >
-                                                Host your front-end files.
-                                    </div>
-                                    <div
-                                                className="project-view__item-text"
-                                    >
-                                                You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-                                    </div>
-                        </li>
-                        <li
-                                    className="project-view__item"
-                        >
-                                    <div
-                                                className="project-view__item-text project-view__item-text--title"
-                                    >
-                                                If your extension has a back-end, run it locally.
-                                    </div>
-                                    <div
-                                                className="project-view__item-text"
-                                    >
-                                                You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-                                    </div>
-                        </li>
-                        <li
-                                    className="project-view__item"
-                        >
-                                    <div
-                                                className="project-view__item-text project-view__item-text--title"
-                                    >
-                                                Go to Extension Views and add the Extension Types that match your extension.
-                                    </div>
-                        </li>
-            </ol>
-            <button
-                        className="project-view__button"
-                        onClick={[Function]}
-            >
-                        View Tutorial
-            </button>
-            <button
-                        className="project-view__button project-view__button--next"
-                        onClick={[Function]}
-            >
-                        Go to Documentation
-            </button>
-</div>,
-        ],
-        "className": "project-view",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <label
-                className="project-view-property project-view-grid__column-1"
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Project Name
-                </div>
-                <input
-                                className="project-view-property__input project-view-property__input--half"
-                                name="name"
-                                onChange={[Function]}
-                                type="text"
-                                value="test"
-                />
-</label>,
-              false,
-              <label
-                className="project-view-property project-view-grid__column-1-2"
-                title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Front-end Files Location
-                </div>
-                <input
-                                className="project-view-property__input"
-                                name="frontendFolderName"
-                                onChange={[Function]}
-                                type="text"
-                                value="test"
-                />
-</label>,
-              false,
-              <label
-                className="project-view-property project-view-grid__column-1-2"
-                title="This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files."
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Front-end Host Command
-                </div>
-                <input
-                                className="project-view-property__input"
-                                name="frontendCommand"
-                                onChange={[Function]}
-                                placeholder="Leave blank for Developer Rig hosting"
-                                type="text"
-                                value="test"
-                />
-</label>,
-              <div
-                className="project-view-grid__column-3"
->
-                <button
-                                className="project-view__button"
-                                onClick={[Function]}
-                >
-                                Activate
-                </button>
-                <div
-                                className="project-view-property__result"
-                                title="This is the result of the front-end activation command."
-                />
-</div>,
-              <label
-                className="project-view-property project-view-grid__column-1-2"
-                title="This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory."
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Back-end Run Command
-                </div>
-                <input
-                                className="project-view-property__input"
-                                name="backendCommand"
-                                onChange={[Function]}
-                                type="text"
-                                value="test"
-                />
-</label>,
-              <div
-                className="project-view-grid__column-3"
->
-                <button
-                                className="project-view__button"
-                                onClick={[Function]}
-                >
-                                Activate
-                </button>
-                <div
-                                className="project-view-property__result"
-                                title="This is the result of the back-end activation command."
-                />
-</div>,
-              <label
-                className="project-view-property project-view-grid__column-1-2"
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Project Folder
-                </div>
-                <input
-                                className="project-view-property__input"
-                                name="projectFolderPath"
-                                onChange={[Function]}
-                                type="text"
-                                value="test"
-                />
-</label>,
-              <label
-                className="project-view-property project-view-grid__column-1-2"
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Extension Types
-                </div>
-                <div
-                                className="project-view-property__value"
-                >
-                                Panel, Component
-                </div>
-</label>,
-              <label
-                className="project-view-property project-view-grid__column-1-2"
->
-                <div
-                                className="project-view-property__name"
-                >
-                                Client ID
-                </div>
-                <div
-                                className="project-view-property__value"
-                >
-                                test
-                </div>
-</label>,
-              false,
-            ],
-            "className": "project-view__section project-view-grid",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Project Name
-</div>,
-                  <input
-                    className="project-view-property__input project-view-property__input--half"
-                    name="name"
-                    onChange={[Function]}
-                    type="text"
-                    value="test"
-/>,
-                ],
-                "className": "project-view-property project-view-grid__column-1",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Project Name",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Project Name",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "project-view-property__input project-view-property__input--half",
-                    "name": "name",
-                    "onChange": [Function],
-                    "type": "text",
-                    "value": "test",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-              ],
-              "type": "label",
-            },
-            false,
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Front-end Files Location
-</div>,
-                  <input
-                    className="project-view-property__input"
-                    name="frontendFolderName"
-                    onChange={[Function]}
-                    type="text"
-                    value="test"
-/>,
-                ],
-                "className": "project-view-property project-view-grid__column-1-2",
-                "title": "This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute.",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Front-end Files Location",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Front-end Files Location",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "project-view-property__input",
-                    "name": "frontendFolderName",
-                    "onChange": [Function],
-                    "type": "text",
-                    "value": "test",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-              ],
-              "type": "label",
-            },
-            false,
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Front-end Host Command
-</div>,
-                  <input
-                    className="project-view-property__input"
-                    name="frontendCommand"
-                    onChange={[Function]}
-                    placeholder="Leave blank for Developer Rig hosting"
-                    type="text"
-                    value="test"
-/>,
-                ],
-                "className": "project-view-property project-view-grid__column-1-2",
-                "title": "This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files.",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Front-end Host Command",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Front-end Host Command",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "project-view-property__input",
-                    "name": "frontendCommand",
-                    "onChange": [Function],
-                    "placeholder": "Leave blank for Developer Rig hosting",
-                    "type": "text",
-                    "value": "test",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-              ],
-              "type": "label",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <button
-                    className="project-view__button"
-                    onClick={[Function]}
->
-                    Activate
-</button>,
-                  <div
-                    className="project-view-property__result"
-                    title="This is the result of the front-end activation command."
-/>,
-                ],
-                "className": "project-view-grid__column-3",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Activate",
-                    "className": "project-view__button",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Activate",
-                  "type": "button",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "",
-                    "className": "project-view-property__result",
-                    "title": "This is the result of the front-end activation command.",
-                  },
-                  "ref": null,
-                  "rendered": "",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Back-end Run Command
-</div>,
-                  <input
-                    className="project-view-property__input"
-                    name="backendCommand"
-                    onChange={[Function]}
-                    type="text"
-                    value="test"
-/>,
-                ],
-                "className": "project-view-property project-view-grid__column-1-2",
-                "title": "This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory.",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Back-end Run Command",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Back-end Run Command",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "project-view-property__input",
-                    "name": "backendCommand",
-                    "onChange": [Function],
-                    "type": "text",
-                    "value": "test",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-              ],
-              "type": "label",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <button
-                    className="project-view__button"
-                    onClick={[Function]}
->
-                    Activate
-</button>,
-                  <div
-                    className="project-view-property__result"
-                    title="This is the result of the back-end activation command."
-/>,
-                ],
-                "className": "project-view-grid__column-3",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Activate",
-                    "className": "project-view__button",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Activate",
-                  "type": "button",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "",
-                    "className": "project-view-property__result",
-                    "title": "This is the result of the back-end activation command.",
-                  },
-                  "ref": null,
-                  "rendered": "",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Project Folder
-</div>,
-                  <input
-                    className="project-view-property__input"
-                    name="projectFolderPath"
-                    onChange={[Function]}
-                    type="text"
-                    value="test"
-/>,
-                ],
-                "className": "project-view-property project-view-grid__column-1-2",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Project Folder",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Project Folder",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "project-view-property__input",
-                    "name": "projectFolderPath",
-                    "onChange": [Function],
-                    "type": "text",
-                    "value": "test",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-              ],
-              "type": "label",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Extension Types
-</div>,
-                  <div
-                    className="project-view-property__value"
->
-                    Panel, Component
-</div>,
-                ],
-                "className": "project-view-property project-view-grid__column-1-2",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Extension Types",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Extension Types",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Panel, Component",
-                    "className": "project-view-property__value",
-                  },
-                  "ref": null,
-                  "rendered": "Panel, Component",
-                  "type": "div",
-                },
-              ],
-              "type": "label",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="project-view-property__name"
->
-                    Client ID
-</div>,
-                  <div
-                    className="project-view-property__value"
->
-                    test
-</div>,
-                ],
-                "className": "project-view-property project-view-grid__column-1-2",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Client ID",
-                    "className": "project-view-property__name",
-                  },
-                  "ref": null,
-                  "rendered": "Client ID",
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "test",
-                    "className": "project-view-property__value",
-                  },
-                  "ref": null,
-                  "rendered": "test",
-                  "type": "div",
-                },
-              ],
-              "type": "label",
-            },
-            false,
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "project-view__vertical-bar",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="project-view__title"
->
-                How to Run an Extension in the Rig
-</div>,
-              <ol>
-                <li
-                                className="project-view__item"
-                >
-                                <div
-                                                className="project-view__item-text project-view__item-text--title"
-                                >
-                                                Host your front-end files.
-                                </div>
-                                <div
-                                                className="project-view__item-text"
-                                >
-                                                You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-                                </div>
-                </li>
-                <li
-                                className="project-view__item"
-                >
-                                <div
-                                                className="project-view__item-text project-view__item-text--title"
-                                >
-                                                If your extension has a back-end, run it locally.
-                                </div>
-                                <div
-                                                className="project-view__item-text"
-                                >
-                                                You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-                                </div>
-                </li>
-                <li
-                                className="project-view__item"
-                >
-                                <div
-                                                className="project-view__item-text project-view__item-text--title"
-                                >
-                                                Go to Extension Views and add the Extension Types that match your extension.
-                                </div>
-                </li>
-</ol>,
-              <button
-                className="project-view__button"
-                onClick={[Function]}
->
-                View Tutorial
-</button>,
-              <button
-                className="project-view__button project-view__button--next"
-                onClick={[Function]}
->
-                Go to Documentation
-</button>,
-            ],
-            "className": "project-view__section",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "How to Run an Extension in the Rig",
-                "className": "project-view__title",
-              },
-              "ref": null,
-              "rendered": "How to Run an Extension in the Rig",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <li
-                    className="project-view__item"
->
-                    <div
-                                        className="project-view__item-text project-view__item-text--title"
-                    >
-                                        Host your front-end files.
-                    </div>
-                    <div
-                                        className="project-view__item-text"
-                    >
-                                        You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-                    </div>
-</li>,
-                  <li
-                    className="project-view__item"
->
-                    <div
-                                        className="project-view__item-text project-view__item-text--title"
-                    >
-                                        If your extension has a back-end, run it locally.
-                    </div>
-                    <div
-                                        className="project-view__item-text"
-                    >
-                                        You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-                    </div>
-</li>,
-                  <li
-                    className="project-view__item"
->
-                    <div
-                                        className="project-view__item-text project-view__item-text--title"
-                    >
-                                        Go to Extension Views and add the Extension Types that match your extension.
-                    </div>
-</li>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <div
-                        className="project-view__item-text project-view__item-text--title"
->
-                        Host your front-end files.
-</div>,
-                      <div
-                        className="project-view__item-text"
->
-                        You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-</div>,
-                    ],
-                    "className": "project-view__item",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Host your front-end files.",
-                        "className": "project-view__item-text project-view__item-text--title",
-                      },
-                      "ref": null,
-                      "rendered": "Host your front-end files.",
-                      "type": "div",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "You can host your front-end files with the Rig by entering the path to your HTML files in the \\"Front-end Files Location\\" text box and clicking the \\"Host with Rig\\" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the \\"Front-end Host Command\\" text box and click the \\"Activate\\" button.",
-                        "className": "project-view__item-text",
-                      },
-                      "ref": null,
-                      "rendered": "You can host your front-end files with the Rig by entering the path to your HTML files in the \\"Front-end Files Location\\" text box and clicking the \\"Host with Rig\\" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the \\"Front-end Host Command\\" text box and click the \\"Activate\\" button.",
-                      "type": "div",
-                    },
-                  ],
-                  "type": "li",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <div
-                        className="project-view__item-text project-view__item-text--title"
->
-                        If your extension has a back-end, run it locally.
-</div>,
-                      <div
-                        className="project-view__item-text"
->
-                        You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-</div>,
-                    ],
-                    "className": "project-view__item",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "If your extension has a back-end, run it locally.",
-                        "className": "project-view__item-text project-view__item-text--title",
-                      },
-                      "ref": null,
-                      "rendered": "If your extension has a back-end, run it locally.",
-                      "type": "div",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "You can run your back-end service from the Rig by entering the command to activate it in the \\"Back-end Run Command\\" text box and clicking the \\"Activate\\" button.",
-                        "className": "project-view__item-text",
-                      },
-                      "ref": null,
-                      "rendered": "You can run your back-end service from the Rig by entering the command to activate it in the \\"Back-end Run Command\\" text box and clicking the \\"Activate\\" button.",
-                      "type": "div",
-                    },
-                  ],
-                  "type": "li",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <div
-                      className="project-view__item-text project-view__item-text--title"
->
-                      Go to Extension Views and add the Extension Types that match your extension.
-</div>,
-                    "className": "project-view__item",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Go to Extension Views and add the Extension Types that match your extension.",
-                      "className": "project-view__item-text project-view__item-text--title",
-                    },
-                    "ref": null,
-                    "rendered": "Go to Extension Views and add the Extension Types that match your extension.",
-                    "type": "div",
-                  },
-                  "type": "li",
-                },
-              ],
-              "type": "ol",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "View Tutorial",
-                "className": "project-view__button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "View Tutorial",
-              "type": "button",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Go to Documentation",
-                "className": "project-view__button project-view__button--next",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Go to Documentation",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
-`;
-
-exports[`<ProjectView /> renders online correctly 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ProjectView
-    onChange={[Function]}
-    refreshViews={[Function]}
-    rigProject={
-        Object {
-            "backendCommand": "test",
-            "extensionViews": Array [],
-            "frontendCommand": "test",
-            "frontendFolderName": "test",
-            "isLocal": false,
-            "manifest": Object {
-              "authorName": "test",
-              "bitsEnabled": true,
-              "configurationLocation": "custom",
-              "description": "test",
-              "hasChatSupport": false,
-              "iconUrls": Object {
-                "100x100": "test",
-              },
-              "id": "test",
-              "name": "test",
-              "requestIdentityLink": false,
-              "sku": "test",
-              "state": "test",
-              "summary": "test",
-              "vendorCode": "test",
-              "version": "0.0.1",
-              "views": Object {
-                "component": Object {
-                  "aspectHeight": 3000,
-                  "aspectWidth": 2500,
-                  "canLinkExternalContent": false,
-                  "size": 1024,
-                  "viewerUrl": "https://test:8080",
-                  "zoom": false,
-                  "zoomPixels": 24,
-                },
-                "config": Object {
-                  "canLinkExternalContent": false,
-                  "viewerUrl": "https://test:8080",
-                },
-                "liveConfig": Object {
-                  "canLinkExternalContent": false,
-                  "viewerUrl": "https://test:8080",
-                },
-                "panel": Object {
-                  "canLinkExternalContent": false,
-                  "height": 300,
-                  "viewerUrl": "https://test:8080",
-                },
-              },
-              "whitelistedConfigUrls": Array [],
-              "whitelistedPanelUrls": Array [],
-            },
-            "projectFolderPath": "test",
-            "secret": "test",
-          }
-    }
-    userId="999999999"
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <div
-          className="project-view__section project-view-grid"
->
-          <label
-                    className="project-view-property project-view-grid__column-1"
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Project Name
-                    </div>
-                    <input
-                              className="project-view-property__input project-view-property__input--half"
-                              name="name"
-                              onChange={[Function]}
-                              type="text"
-                              value="test"
-                    />
-          </label>
-          <Unknown>
-                    <label
-                              className="project-view-property project-view-grid__column-2"
-                    >
-                              <div
-                                        className="project-view-property__name"
-                              >
-                                        Version
-                              </div>
-                              <input
-                                        className="project-view-property__input project-view-property__input--third"
-                                        name="version"
-                                        onChange={[Function]}
-                                        type="text"
-                                        value="0.0.1"
-                              />
-                    </label>
-                    <div
-                              className="project-view-grid__column-3"
-                    >
-                              <button
-                                        className="project-view__button"
-                                        onClick={[Function]}
-                              >
-                                        Update
-                              </button>
-                              <div
-                                        className="project-view-property__result"
-                                        title="This is the result of updating the extension by version."
-                              />
-                    </div>
-          </Unknown>
-          <label
-                    className="project-view-property project-view-grid__column-1-2"
-                    title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Front-end Files Location
-                    </div>
-                    <input
-                              className="project-view-property__input"
-                              name="frontendFolderName"
-                              onChange={[Function]}
-                              type="text"
-                              value="test"
-                    />
-          </label>
-          <label
-                    className="project-view-property project-view-grid__column-1-2"
-                    title="This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files."
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Front-end Host Command
-                    </div>
-                    <input
-                              className="project-view-property__input"
-                              name="frontendCommand"
-                              onChange={[Function]}
-                              placeholder="Leave blank for Developer Rig hosting"
-                              type="text"
-                              value="test"
-                    />
-          </label>
-          <div
-                    className="project-view-grid__column-3"
-          >
-                    <button
-                              className="project-view__button"
-                              onClick={[Function]}
-                    >
-                              Activate
-                    </button>
-                    <div
-                              className="project-view-property__result"
-                              title="This is the result of the front-end activation command."
-                    />
-          </div>
-          <label
-                    className="project-view-property project-view-grid__column-1-2"
-                    title="This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory."
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Back-end Run Command
-                    </div>
-                    <input
-                              className="project-view-property__input"
-                              name="backendCommand"
-                              onChange={[Function]}
-                              type="text"
-                              value="test"
-                    />
-          </label>
-          <div
-                    className="project-view-grid__column-3"
-          >
-                    <button
-                              className="project-view__button"
-                              onClick={[Function]}
-                    >
-                              Activate
-                    </button>
-                    <div
-                              className="project-view-property__result"
-                              title="This is the result of the back-end activation command."
-                    />
-          </div>
-          <label
-                    className="project-view-property project-view-grid__column-1-2"
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Project Folder
-                    </div>
-                    <input
-                              className="project-view-property__input"
-                              name="projectFolderPath"
-                              onChange={[Function]}
-                              type="text"
-                              value="test"
-                    />
-          </label>
-          <label
-                    className="project-view-property project-view-grid__column-1-2"
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Extension Types
-                    </div>
-                    <div
-                              className="project-view-property__value"
-                    >
-                              Panel, Component
-                    </div>
-          </label>
-          <label
-                    className="project-view-property project-view-grid__column-1-2"
-          >
-                    <div
-                              className="project-view-property__name"
-                    >
-                              Client ID
-                    </div>
-                    <div
-                              className="project-view-property__value"
-                    >
-                              test
-                    </div>
-          </label>
-          <Unknown>
-                    <label
-                              className="project-view-property project-view-grid__column-1"
-                    >
-                              <button
-                                        className="project-view__button project-view__button--first"
-                                        onClick={[Function]}
-                              >
-                                        Refresh Manifest
-                              </button>
-                    </label>
-                    <label
-                              className="project-view-property project-view-grid__column-1-2"
-                    >
-                              Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
-                              <a
-                                        href="https://dev.twitch.tv/projects/test/files"
-                                        target="dev-site"
-                              >
-                                        here
-                              </a>
-                               then click "Manage" for version 
-                              0.0.1
-                               then click "Asset Hosting" to check and adjust if needed.
-                    </label>
-          </Unknown>
-</div>,
-        <div
-          className="project-view__vertical-bar"
-/>,
-        <div
-          className="project-view__section"
->
-          <div
-                    className="project-view__title"
-          >
-                    How to Run an Extension in the Rig
-          </div>
-          <ol>
-                    <li
-                              className="project-view__item"
-                    >
-                              <div
-                                        className="project-view__item-text project-view__item-text--title"
-                              >
-                                        Host your front-end files.
-                              </div>
-                              <div
-                                        className="project-view__item-text"
-                              >
-                                        You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-                              </div>
-                    </li>
-                    <li
-                              className="project-view__item"
-                    >
-                              <div
-                                        className="project-view__item-text project-view__item-text--title"
-                              >
-                                        If your extension has a back-end, run it locally.
-                              </div>
-                              <div
-                                        className="project-view__item-text"
-                              >
-                                        You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-                              </div>
-                    </li>
-                    <li
-                              className="project-view__item"
-                    >
-                              <div
-                                        className="project-view__item-text project-view__item-text--title"
-                              >
-                                        Go to Extension Views and add the Extension Types that match your extension.
-                              </div>
-                    </li>
-          </ol>
-          <button
-                    className="project-view__button"
-                    onClick={[Function]}
-          >
-                    View Tutorial
-          </button>
-          <button
-                    className="project-view__button project-view__button--next"
-                    onClick={[Function]}
-          >
-                    Go to Documentation
-          </button>
-</div>,
-      ],
-      "className": "project-view",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <label
-              className="project-view-property project-view-grid__column-1"
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Project Name
-              </div>
-              <input
-                            className="project-view-property__input project-view-property__input--half"
-                            name="name"
-                            onChange={[Function]}
-                            type="text"
-                            value="test"
-              />
-</label>,
-            <Unknown>
-              <label
-                            className="project-view-property project-view-grid__column-2"
-              >
-                            <div
-                                          className="project-view-property__name"
-                            >
-                                          Version
-                            </div>
-                            <input
-                                          className="project-view-property__input project-view-property__input--third"
-                                          name="version"
-                                          onChange={[Function]}
-                                          type="text"
-                                          value="0.0.1"
-                            />
-              </label>
-              <div
-                            className="project-view-grid__column-3"
-              >
-                            <button
-                                          className="project-view__button"
-                                          onClick={[Function]}
-                            >
-                                          Update
-                            </button>
-                            <div
-                                          className="project-view-property__result"
-                                          title="This is the result of updating the extension by version."
-                            />
-              </div>
-</Unknown>,
-            <label
-              className="project-view-property project-view-grid__column-1-2"
-              title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Front-end Files Location
-              </div>
-              <input
-                            className="project-view-property__input"
-                            name="frontendFolderName"
-                            onChange={[Function]}
-                            type="text"
-                            value="test"
-              />
-</label>,
-            false,
-            <label
-              className="project-view-property project-view-grid__column-1-2"
-              title="This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files."
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Front-end Host Command
-              </div>
-              <input
-                            className="project-view-property__input"
-                            name="frontendCommand"
-                            onChange={[Function]}
-                            placeholder="Leave blank for Developer Rig hosting"
-                            type="text"
-                            value="test"
-              />
-</label>,
-            <div
-              className="project-view-grid__column-3"
->
-              <button
-                            className="project-view__button"
-                            onClick={[Function]}
-              >
-                            Activate
-              </button>
-              <div
-                            className="project-view-property__result"
-                            title="This is the result of the front-end activation command."
-              />
-</div>,
-            <label
-              className="project-view-property project-view-grid__column-1-2"
-              title="This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory."
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Back-end Run Command
-              </div>
-              <input
-                            className="project-view-property__input"
-                            name="backendCommand"
-                            onChange={[Function]}
-                            type="text"
-                            value="test"
-              />
-</label>,
-            <div
-              className="project-view-grid__column-3"
->
-              <button
-                            className="project-view__button"
-                            onClick={[Function]}
-              >
-                            Activate
-              </button>
-              <div
-                            className="project-view-property__result"
-                            title="This is the result of the back-end activation command."
-              />
-</div>,
-            <label
-              className="project-view-property project-view-grid__column-1-2"
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Project Folder
-              </div>
-              <input
-                            className="project-view-property__input"
-                            name="projectFolderPath"
-                            onChange={[Function]}
-                            type="text"
-                            value="test"
-              />
-</label>,
-            <label
-              className="project-view-property project-view-grid__column-1-2"
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Extension Types
-              </div>
-              <div
-                            className="project-view-property__value"
-              >
-                            Panel, Component
-              </div>
-</label>,
-            <label
-              className="project-view-property project-view-grid__column-1-2"
->
-              <div
-                            className="project-view-property__name"
-              >
-                            Client ID
-              </div>
-              <div
-                            className="project-view-property__value"
-              >
-                            test
-              </div>
-</label>,
-            <Unknown>
-              <label
-                            className="project-view-property project-view-grid__column-1"
-              >
-                            <button
-                                          className="project-view__button project-view__button--first"
-                                          onClick={[Function]}
-                            >
-                                          Refresh Manifest
-                            </button>
-              </label>
-              <label
-                            className="project-view-property project-view-grid__column-1-2"
-              >
-                            Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
-                            <a
-                                          href="https://dev.twitch.tv/projects/test/files"
-                                          target="dev-site"
-                            >
-                                          here
-                            </a>
-                             then click "Manage" for version 
-                            0.0.1
-                             then click "Asset Hosting" to check and adjust if needed.
-              </label>
-</Unknown>,
-          ],
-          "className": "project-view__section project-view-grid",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Project Name
-</div>,
-                <input
-                  className="project-view-property__input project-view-property__input--half"
-                  name="name"
-                  onChange={[Function]}
-                  type="text"
-                  value="test"
-/>,
-              ],
-              "className": "project-view-property project-view-grid__column-1",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Project Name",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Project Name",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "project-view-property__input project-view-property__input--half",
-                  "name": "name",
-                  "onChange": [Function],
-                  "type": "text",
-                  "value": "test",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-            ],
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                <label
-                  className="project-view-property project-view-grid__column-2"
->
-                  <div
-                                    className="project-view-property__name"
-                  >
                                     Version
-                  </div>
-                  <input
+                        </div>
+                        <input
                                     className="project-view-property__input project-view-property__input--third"
                                     name="version"
                                     onChange={[Function]}
                                     type="text"
                                     value="0.0.1"
-                  />
-</label>,
-                <div
-                  className="project-view-grid__column-3"
->
-                  <button
-                                    className="project-view__button"
-                                    onClick={[Function]}
-                  >
-                                    Update
-                  </button>
-                  <div
-                                    className="project-view-property__result"
-                                    title="This is the result of updating the extension by version."
-                  />
-</div>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <div
-                      className="project-view-property__name"
->
-                      Version
-</div>,
-                    <input
-                      className="project-view-property__input project-view-property__input--third"
-                      name="version"
-                      onChange={[Function]}
-                      type="text"
-                      value="0.0.1"
-/>,
-                  ],
-                  "className": "project-view-property project-view-grid__column-2",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Version",
-                      "className": "project-view-property__name",
-                    },
-                    "ref": null,
-                    "rendered": "Version",
-                    "type": "div",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "className": "project-view-property__input project-view-property__input--third",
-                      "name": "version",
-                      "onChange": [Function],
-                      "type": "text",
-                      "value": "0.0.1",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": "input",
-                  },
-                ],
-                "type": "label",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <button
-                      className="project-view__button"
-                      onClick={[Function]}
->
-                      Update
-</button>,
-                    <div
-                      className="project-view-property__result"
-                      title="This is the result of updating the extension by version."
-/>,
-                  ],
-                  "className": "project-view-grid__column-3",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Update",
-                      "className": "project-view__button",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Update",
-                    "type": "button",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "",
-                      "className": "project-view-property__result",
-                      "title": "This is the result of updating the extension by version.",
-                    },
-                    "ref": null,
-                    "rendered": "",
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
-              },
-            ],
-            "type": Symbol(react.fragment),
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Front-end Files Location
-</div>,
-                <input
-                  className="project-view-property__input"
-                  name="frontendFolderName"
-                  onChange={[Function]}
-                  type="text"
-                  value="test"
-/>,
-              ],
-              "className": "project-view-property project-view-grid__column-1-2",
-              "title": "This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute.",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Front-end Files Location",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Front-end Files Location",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "project-view-property__input",
-                  "name": "frontendFolderName",
-                  "onChange": [Function],
-                  "type": "text",
-                  "value": "test",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-            ],
-            "type": "label",
-          },
-          false,
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Front-end Host Command
-</div>,
-                <input
-                  className="project-view-property__input"
-                  name="frontendCommand"
-                  onChange={[Function]}
-                  placeholder="Leave blank for Developer Rig hosting"
-                  type="text"
-                  value="test"
-/>,
-              ],
-              "className": "project-view-property project-view-grid__column-1-2",
-              "title": "This is the command used to host your front-end files.  If you leave this blank, you may use the Developer Rig to host your front-end files.",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Front-end Host Command",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Front-end Host Command",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "project-view-property__input",
-                  "name": "frontendCommand",
-                  "onChange": [Function],
-                  "placeholder": "Leave blank for Developer Rig hosting",
-                  "type": "text",
-                  "value": "test",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-            ],
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <button
-                  className="project-view__button"
-                  onClick={[Function]}
->
-                  Activate
-</button>,
-                <div
-                  className="project-view-property__result"
-                  title="This is the result of the front-end activation command."
-/>,
-              ],
-              "className": "project-view-grid__column-3",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Activate",
-                  "className": "project-view__button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Activate",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "",
-                  "className": "project-view-property__result",
-                  "title": "This is the result of the front-end activation command.",
-                },
-                "ref": null,
-                "rendered": "",
-                "type": "div",
-              },
-            ],
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Back-end Run Command
-</div>,
-                <input
-                  className="project-view-property__input"
-                  name="backendCommand"
-                  onChange={[Function]}
-                  type="text"
-                  value="test"
-/>,
-              ],
-              "className": "project-view-property project-view-grid__column-1-2",
-              "title": "This is the command used to run your back-end.  If there is a Project Folder, this command is run with that folder as its current directory.",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Back-end Run Command",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Back-end Run Command",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "project-view-property__input",
-                  "name": "backendCommand",
-                  "onChange": [Function],
-                  "type": "text",
-                  "value": "test",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-            ],
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <button
-                  className="project-view__button"
-                  onClick={[Function]}
->
-                  Activate
-</button>,
-                <div
-                  className="project-view-property__result"
-                  title="This is the result of the back-end activation command."
-/>,
-              ],
-              "className": "project-view-grid__column-3",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Activate",
-                  "className": "project-view__button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Activate",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "",
-                  "className": "project-view-property__result",
-                  "title": "This is the result of the back-end activation command.",
-                },
-                "ref": null,
-                "rendered": "",
-                "type": "div",
-              },
-            ],
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Project Folder
-</div>,
-                <input
-                  className="project-view-property__input"
-                  name="projectFolderPath"
-                  onChange={[Function]}
-                  type="text"
-                  value="test"
-/>,
-              ],
-              "className": "project-view-property project-view-grid__column-1-2",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Project Folder",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Project Folder",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "project-view-property__input",
-                  "name": "projectFolderPath",
-                  "onChange": [Function],
-                  "type": "text",
-                  "value": "test",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-            ],
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Extension Types
-</div>,
-                <div
-                  className="project-view-property__value"
->
-                  Panel, Component
-</div>,
-              ],
-              "className": "project-view-property project-view-grid__column-1-2",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Extension Types",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Extension Types",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Panel, Component",
-                  "className": "project-view-property__value",
-                },
-                "ref": null,
-                "rendered": "Panel, Component",
-                "type": "div",
-              },
-            ],
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="project-view-property__name"
->
-                  Client ID
-</div>,
-                <div
-                  className="project-view-property__value"
->
-                  test
-</div>,
-              ],
-              "className": "project-view-property project-view-grid__column-1-2",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Client ID",
-                  "className": "project-view-property__name",
-                },
-                "ref": null,
-                "rendered": "Client ID",
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "test",
-                  "className": "project-view-property__value",
-                },
-                "ref": null,
-                "rendered": "test",
-                "type": "div",
-              },
-            ],
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                <label
-                  className="project-view-property project-view-grid__column-1"
->
-                  <button
-                                    className="project-view__button project-view__button--first"
-                                    onClick={[Function]}
-                  >
-                                    Refresh Manifest
-                  </button>
-</label>,
-                <label
-                  className="project-view-property project-view-grid__column-1-2"
->
-                  Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
-                  <a
-                                    href="https://dev.twitch.tv/projects/test/files"
-                                    target="dev-site"
-                  >
-                                    here
-                  </a>
-                   then click "Manage" for version 
-                  0.0.1
-                   then click "Asset Hosting" to check and adjust if needed.
-</label>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <button
-                    className="project-view__button project-view__button--first"
-                    onClick={[Function]}
->
-                    Refresh Manifest
-</button>,
-                  "className": "project-view-property project-view-grid__column-1",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Refresh Manifest",
-                    "className": "project-view__button project-view__button--first",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Refresh Manifest",
-                  "type": "button",
-                },
-                "type": "label",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
-                    <a
-                      href="https://dev.twitch.tv/projects/test/files"
-                      target="dev-site"
->
-                      here
-</a>,
-                    " then click \\"Manage\\" for version ",
-                    "0.0.1",
-                    " then click \\"Asset Hosting\\" to check and adjust if needed.",
-                  ],
-                  "className": "project-view-property project-view-grid__column-1-2",
-                },
-                "ref": null,
-                "rendered": Array [
-                  "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "here",
-                      "href": "https://dev.twitch.tv/projects/test/files",
-                      "target": "dev-site",
-                    },
-                    "ref": null,
-                    "rendered": "here",
-                    "type": "a",
-                  },
-                  " then click \\"Manage\\" for version ",
-                  "0.0.1",
-                  " then click \\"Asset Hosting\\" to check and adjust if needed.",
-                ],
-                "type": "label",
-              },
-            ],
-            "type": Symbol(react.fragment),
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "className": "project-view__vertical-bar",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="project-view__title"
->
-              How to Run an Extension in the Rig
-</div>,
-            <ol>
-              <li
-                            className="project-view__item"
-              >
-                            <div
-                                          className="project-view__item-text project-view__item-text--title"
-                            >
-                                          Host your front-end files.
-                            </div>
-                            <div
-                                          className="project-view__item-text"
-                            >
-                                          You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-                            </div>
-              </li>
-              <li
-                            className="project-view__item"
-              >
-                            <div
-                                          className="project-view__item-text project-view__item-text--title"
-                            >
-                                          If your extension has a back-end, run it locally.
-                            </div>
-                            <div
-                                          className="project-view__item-text"
-                            >
-                                          You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-                            </div>
-              </li>
-              <li
-                            className="project-view__item"
-              >
-                            <div
-                                          className="project-view__item-text project-view__item-text--title"
-                            >
-                                          Go to Extension Views and add the Extension Types that match your extension.
-                            </div>
-              </li>
-</ol>,
-            <button
-              className="project-view__button"
-              onClick={[Function]}
->
-              View Tutorial
-</button>,
-            <button
-              className="project-view__button project-view__button--next"
-              onClick={[Function]}
->
-              Go to Documentation
-</button>,
-          ],
-          "className": "project-view__section",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "How to Run an Extension in the Rig",
-              "className": "project-view__title",
-            },
-            "ref": null,
-            "rendered": "How to Run an Extension in the Rig",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <li
-                  className="project-view__item"
->
-                  <div
-                                    className="project-view__item-text project-view__item-text--title"
-                  >
-                                    Host your front-end files.
-                  </div>
-                  <div
-                                    className="project-view__item-text"
-                  >
-                                    You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-                  </div>
-</li>,
-                <li
-                  className="project-view__item"
->
-                  <div
-                                    className="project-view__item-text project-view__item-text--title"
-                  >
-                                    If your extension has a back-end, run it locally.
-                  </div>
-                  <div
-                                    className="project-view__item-text"
-                  >
-                                    You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-                  </div>
-</li>,
-                <li
-                  className="project-view__item"
->
-                  <div
-                                    className="project-view__item-text project-view__item-text--title"
-                  >
-                                    Go to Extension Views and add the Extension Types that match your extension.
-                  </div>
-</li>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <div
-                      className="project-view__item-text project-view__item-text--title"
->
-                      Host your front-end files.
-</div>,
-                    <div
-                      className="project-view__item-text"
->
-                      You can host your front-end files with the Rig by entering the path to your HTML files in the "Front-end Files Location" text box and clicking the "Host with Rig" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the "Front-end Host Command" text box and click the "Activate" button.
-</div>,
-                  ],
-                  "className": "project-view__item",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Host your front-end files.",
-                      "className": "project-view__item-text project-view__item-text--title",
-                    },
-                    "ref": null,
-                    "rendered": "Host your front-end files.",
-                    "type": "div",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "You can host your front-end files with the Rig by entering the path to your HTML files in the \\"Front-end Files Location\\" text box and clicking the \\"Host with Rig\\" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the \\"Front-end Host Command\\" text box and click the \\"Activate\\" button.",
-                      "className": "project-view__item-text",
-                    },
-                    "ref": null,
-                    "rendered": "You can host your front-end files with the Rig by entering the path to your HTML files in the \\"Front-end Files Location\\" text box and clicking the \\"Host with Rig\\" button.  If your front-end requires a custom command, such as for a React application, enter its activation command in the \\"Front-end Host Command\\" text box and click the \\"Activate\\" button.",
-                    "type": "div",
-                  },
-                ],
-                "type": "li",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <div
-                      className="project-view__item-text project-view__item-text--title"
->
-                      If your extension has a back-end, run it locally.
-</div>,
-                    <div
-                      className="project-view__item-text"
->
-                      You can run your back-end service from the Rig by entering the command to activate it in the "Back-end Run Command" text box and clicking the "Activate" button.
-</div>,
-                  ],
-                  "className": "project-view__item",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "If your extension has a back-end, run it locally.",
-                      "className": "project-view__item-text project-view__item-text--title",
-                    },
-                    "ref": null,
-                    "rendered": "If your extension has a back-end, run it locally.",
-                    "type": "div",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "You can run your back-end service from the Rig by entering the command to activate it in the \\"Back-end Run Command\\" text box and clicking the \\"Activate\\" button.",
-                      "className": "project-view__item-text",
-                    },
-                    "ref": null,
-                    "rendered": "You can run your back-end service from the Rig by entering the command to activate it in the \\"Back-end Run Command\\" text box and clicking the \\"Activate\\" button.",
-                    "type": "div",
-                  },
-                ],
-                "type": "li",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <div
-                    className="project-view__item-text project-view__item-text--title"
->
-                    Go to Extension Views and add the Extension Types that match your extension.
-</div>,
-                  "className": "project-view__item",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Go to Extension Views and add the Extension Types that match your extension.",
-                    "className": "project-view__item-text project-view__item-text--title",
-                  },
-                  "ref": null,
-                  "rendered": "Go to Extension Views and add the Extension Types that match your extension.",
-                  "type": "div",
-                },
-                "type": "li",
-              },
-            ],
-            "type": "ol",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "View Tutorial",
-              "className": "project-view__button",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "View Tutorial",
-            "type": "button",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Go to Documentation",
-              "className": "project-view__button project-view__button--next",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Go to Documentation",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="project-view__section project-view-grid"
->
-            <label
-                        className="project-view-property project-view-grid__column-1"
-            >
-                        <div
-                                    className="project-view-property__name"
-                        >
-                                    Project Name
-                        </div>
-                        <input
-                                    className="project-view-property__input project-view-property__input--half"
-                                    name="name"
-                                    onChange={[Function]}
-                                    type="text"
-                                    value="test"
                         />
             </label>
-            <Unknown>
-                        <label
-                                    className="project-view-property project-view-grid__column-2"
+            <div
+                        className="project-view-grid__column-3"
+            >
+                        <button
+                                    className="project-view__button"
+                                    onClick={[Function]}
                         >
-                                    <div
-                                                className="project-view-property__name"
-                                    >
-                                                Version
-                                    </div>
-                                    <input
-                                                className="project-view-property__input project-view-property__input--third"
-                                                name="version"
-                                                onChange={[Function]}
-                                                type="text"
-                                                value="0.0.1"
-                                    />
-                        </label>
+                                    Update
+                        </button>
                         <div
-                                    className="project-view-grid__column-3"
-                        >
-                                    <button
-                                                className="project-view__button"
-                                                onClick={[Function]}
-                                    >
-                                                Update
-                                    </button>
-                                    <div
-                                                className="project-view-property__result"
-                                                title="This is the result of updating the extension by version."
-                                    />
-                        </div>
-            </Unknown>
+                                    className="project-view-property__result"
+                                    title="This is the result of updating the extension by version."
+                        />
+            </div>
             <label
                         className="project-view-property project-view-grid__column-1-2"
                         title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
@@ -4118,32 +1666,30 @@ ShallowWrapper {
                                     test
                         </div>
             </label>
-            <Unknown>
-                        <label
-                                    className="project-view-property project-view-grid__column-1"
+            <label
+                        className="project-view-property project-view-grid__column-1"
+            >
+                        <button
+                                    className="project-view__button project-view__button--first"
+                                    onClick={[Function]}
                         >
-                                    <button
-                                                className="project-view__button project-view__button--first"
-                                                onClick={[Function]}
-                                    >
-                                                Refresh Manifest
-                                    </button>
-                        </label>
-                        <label
-                                    className="project-view-property project-view-grid__column-1-2"
+                                    Refresh Manifest
+                        </button>
+            </label>
+            <label
+                        className="project-view-property project-view-grid__column-1-2"
+            >
+                        Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
+                        <a
+                                    href="https://dev.twitch.tv/projects/test/files"
+                                    target="dev-site"
                         >
-                                    Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
-                                    <a
-                                                href="https://dev.twitch.tv/projects/test/files"
-                                                target="dev-site"
-                                    >
-                                                here
-                                    </a>
-                                     then click "Manage" for version 
-                                    0.0.1
-                                     then click "Asset Hosting" to check and adjust if needed.
-                        </label>
-            </Unknown>
+                                    here
+                        </a>
+                         then click "Manage" for version 
+                        0.0.1
+                         then click "Asset Hosting" to check and adjust if needed.
+            </label>
 </div>,
           <div
             className="project-view__vertical-bar"
@@ -4235,38 +1781,36 @@ ShallowWrapper {
                                 value="test"
                 />
 </label>,
-              <Unknown>
-                <label
-                                className="project-view-property project-view-grid__column-2"
-                >
-                                <div
-                                                className="project-view-property__name"
-                                >
-                                                Version
-                                </div>
-                                <input
-                                                className="project-view-property__input project-view-property__input--third"
-                                                name="version"
-                                                onChange={[Function]}
-                                                type="text"
-                                                value="0.0.1"
-                                />
-                </label>
+              <label
+                className="project-view-property project-view-grid__column-2"
+>
                 <div
-                                className="project-view-grid__column-3"
+                                className="project-view-property__name"
                 >
-                                <button
-                                                className="project-view__button"
-                                                onClick={[Function]}
-                                >
-                                                Update
-                                </button>
-                                <div
-                                                className="project-view-property__result"
-                                                title="This is the result of updating the extension by version."
-                                />
+                                Version
                 </div>
-</Unknown>,
+                <input
+                                className="project-view-property__input project-view-property__input--third"
+                                name="version"
+                                onChange={[Function]}
+                                type="text"
+                                value="0.0.1"
+                />
+</label>,
+              <div
+                className="project-view-grid__column-3"
+>
+                <button
+                                className="project-view__button"
+                                onClick={[Function]}
+                >
+                                Update
+                </button>
+                <div
+                                className="project-view-property__result"
+                                title="This is the result of updating the extension by version."
+                />
+</div>,
               <label
                 className="project-view-property project-view-grid__column-1-2"
                 title="This is the path to your front-end files relative to the Project Folder.  If there is no Project Folder, ensure this path is absolute."
@@ -4392,32 +1936,30 @@ ShallowWrapper {
                                 test
                 </div>
 </label>,
-              <Unknown>
-                <label
-                                className="project-view-property project-view-grid__column-1"
+              <label
+                className="project-view-property project-view-grid__column-1"
+>
+                <button
+                                className="project-view__button project-view__button--first"
+                                onClick={[Function]}
                 >
-                                <button
-                                                className="project-view__button project-view__button--first"
-                                                onClick={[Function]}
-                                >
-                                                Refresh Manifest
-                                </button>
-                </label>
-                <label
-                                className="project-view-property project-view-grid__column-1-2"
+                                Refresh Manifest
+                </button>
+</label>,
+              <label
+                className="project-view-property project-view-grid__column-1-2"
+>
+                Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
+                <a
+                                href="https://dev.twitch.tv/projects/test/files"
+                                target="dev-site"
                 >
-                                Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
-                                <a
-                                                href="https://dev.twitch.tv/projects/test/files"
-                                                target="dev-site"
-                                >
-                                                here
-                                </a>
-                                 then click "Manage" for version 
-                                0.0.1
-                                 then click "Asset Hosting" to check and adjust if needed.
-                </label>
-</Unknown>,
+                                here
+                </a>
+                 then click "Manage" for version 
+                0.0.1
+                 then click "Asset Hosting" to check and adjust if needed.
+</label>,
             ],
             "className": "project-view__section project-view-grid",
           },
@@ -4479,40 +2021,23 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <label
-                    className="project-view-property project-view-grid__column-2"
->
-                    <div
-                                        className="project-view-property__name"
-                    >
-                                        Version
-                    </div>
-                    <input
-                                        className="project-view-property__input project-view-property__input--third"
-                                        name="version"
-                                        onChange={[Function]}
-                                        type="text"
-                                        value="0.0.1"
-                    />
-</label>,
                   <div
-                    className="project-view-grid__column-3"
+                    className="project-view-property__name"
 >
-                    <button
-                                        className="project-view__button"
-                                        onClick={[Function]}
-                    >
-                                        Update
-                    </button>
-                    <div
-                                        className="project-view-property__result"
-                                        title="This is the result of updating the extension by version."
-                    />
+                    Version
 </div>,
+                  <input
+                    className="project-view-property__input project-view-property__input--third"
+                    name="version"
+                    onChange={[Function]}
+                    type="text"
+                    value="0.0.1"
+/>,
                 ],
+                "className": "project-view-property project-view-grid__column-2",
               },
               "ref": null,
               "rendered": Array [
@@ -4521,106 +2046,80 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <div
-                        className="project-view-property__name"
->
-                        Version
-</div>,
-                      <input
-                        className="project-view-property__input project-view-property__input--third"
-                        name="version"
-                        onChange={[Function]}
-                        type="text"
-                        value="0.0.1"
-/>,
-                    ],
-                    "className": "project-view-property project-view-grid__column-2",
+                    "children": "Version",
+                    "className": "project-view-property__name",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Version",
-                        "className": "project-view-property__name",
-                      },
-                      "ref": null,
-                      "rendered": "Version",
-                      "type": "div",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "className": "project-view-property__input project-view-property__input--third",
-                        "name": "version",
-                        "onChange": [Function],
-                        "type": "text",
-                        "value": "0.0.1",
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": "input",
-                    },
-                  ],
-                  "type": "label",
+                  "rendered": "Version",
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <button
-                        className="project-view__button"
-                        onClick={[Function]}
->
-                        Update
-</button>,
-                      <div
-                        className="project-view-property__result"
-                        title="This is the result of updating the extension by version."
-/>,
-                    ],
-                    "className": "project-view-grid__column-3",
+                    "className": "project-view-property__input project-view-property__input--third",
+                    "name": "version",
+                    "onChange": [Function],
+                    "type": "text",
+                    "value": "0.0.1",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Update",
-                        "className": "project-view__button",
-                        "onClick": [Function],
-                      },
-                      "ref": null,
-                      "rendered": "Update",
-                      "type": "button",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "",
-                        "className": "project-view-property__result",
-                        "title": "This is the result of updating the extension by version.",
-                      },
-                      "ref": null,
-                      "rendered": "",
-                      "type": "div",
-                    },
-                  ],
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className="project-view__button"
+                    onClick={[Function]}
+>
+                    Update
+</button>,
+                  <div
+                    className="project-view-property__result"
+                    title="This is the result of updating the extension by version."
+/>,
+                ],
+                "className": "project-view-grid__column-3",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Update",
+                    "className": "project-view__button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Update",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "",
+                    "className": "project-view-property__result",
+                    "title": "This is the result of updating the extension by version.",
+                  },
+                  "ref": null,
+                  "rendered": "",
                   "type": "div",
                 },
               ],
-              "type": Symbol(react.fragment),
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -5039,109 +2538,72 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="project-view__button project-view__button--first"
+                  onClick={[Function]}
+>
+                  Refresh Manifest
+</button>,
+                "className": "project-view-property project-view-grid__column-1",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Refresh Manifest",
+                  "className": "project-view__button project-view__button--first",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Refresh Manifest",
+                "type": "button",
+              },
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <label
-                    className="project-view-property project-view-grid__column-1"
+                  "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
+                  <a
+                    href="https://dev.twitch.tv/projects/test/files"
+                    target="dev-site"
 >
-                    <button
-                                        className="project-view__button project-view__button--first"
-                                        onClick={[Function]}
-                    >
-                                        Refresh Manifest
-                    </button>
-</label>,
-                  <label
-                    className="project-view-property project-view-grid__column-1-2"
->
-                    Make sure your Asset Paths are correct. Your "Testing Base URI" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click 
-                    <a
-                                        href="https://dev.twitch.tv/projects/test/files"
-                                        target="dev-site"
-                    >
-                                        here
-                    </a>
-                     then click "Manage" for version 
-                    0.0.1
-                     then click "Asset Hosting" to check and adjust if needed.
-</label>,
+                    here
+</a>,
+                  " then click \\"Manage\\" for version ",
+                  "0.0.1",
+                  " then click \\"Asset Hosting\\" to check and adjust if needed.",
                 ],
+                "className": "project-view-property project-view-grid__column-1-2",
               },
               "ref": null,
               "rendered": Array [
+                "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": <button
-                      className="project-view__button project-view__button--first"
-                      onClick={[Function]}
->
-                      Refresh Manifest
-</button>,
-                    "className": "project-view-property project-view-grid__column-1",
+                    "children": "here",
+                    "href": "https://dev.twitch.tv/projects/test/files",
+                    "target": "dev-site",
                   },
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Refresh Manifest",
-                      "className": "project-view__button project-view__button--first",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Refresh Manifest",
-                    "type": "button",
-                  },
-                  "type": "label",
+                  "rendered": "here",
+                  "type": "a",
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
-                      <a
-                        href="https://dev.twitch.tv/projects/test/files"
-                        target="dev-site"
->
-                        here
-</a>,
-                      " then click \\"Manage\\" for version ",
-                      "0.0.1",
-                      " then click \\"Asset Hosting\\" to check and adjust if needed.",
-                    ],
-                    "className": "project-view-property project-view-grid__column-1-2",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    "Make sure your Asset Paths are correct. Your \\"Testing Base URI\\" must be https://localhost.rig.twitch.tv:8080/ to use the Developer Rig. Also, ensure the individual Extension Type paths are correct. Click ",
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "here",
-                        "href": "https://dev.twitch.tv/projects/test/files",
-                        "target": "dev-site",
-                      },
-                      "ref": null,
-                      "rendered": "here",
-                      "type": "a",
-                    },
-                    " then click \\"Manage\\" for version ",
-                    "0.0.1",
-                    " then click \\"Asset Hosting\\" to check and adjust if needed.",
-                  ],
-                  "type": "label",
-                },
+                " then click \\"Manage\\" for version ",
+                "0.0.1",
+                " then click \\"Asset Hosting\\" to check and adjust if needed.",
               ],
-              "type": Symbol(react.fragment),
+              "type": "label",
             },
           ],
           "type": "div",

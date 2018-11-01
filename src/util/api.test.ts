@@ -101,7 +101,7 @@ describe('api', () => {
   describe('fetchExtensionManifest', () => {
     it('should return data', async function() {
       globalAny.fetch = jest.fn().mockImplementation(mockFetchForExtensionManifest);
-      const data = await fetchExtensionManifest(true, 'clientId', 'version', 'jwt');
+      const data = await fetchExtensionManifest('clientId', 'version', 'jwt');
       expect(data).toBeDefined();
     });
 
@@ -109,7 +109,7 @@ describe('api', () => {
       globalAny.fetch = jest.fn().mockImplementation(mockEmptyResponse);
       expect.assertions(1);
       try {
-        await fetchExtensionManifest(true, 'clientId', 'version', 'jwt');
+        await fetchExtensionManifest('clientId', 'version', 'jwt');
       } catch (ex) {
         expect(ex.message).toEqual('Unable to retrieve extension manifest; please verify your client ID, secret, and version');
       }
@@ -279,7 +279,7 @@ describe('api', () => {
   describe('hostFrontend', () => {
     it('succeeds', async function() {
       globalAny.fetch = jest.fn().mockImplementation(mockEmptyResponse);
-      await hostFrontend('frontendFolderPath', false, 8080, 'projectFolderPath');
+      await hostFrontend('frontendFolderPath', 8080, 'projectFolderPath');
       expect(globalAny.fetch).toHaveBeenCalledTimes(1);
     });
   });

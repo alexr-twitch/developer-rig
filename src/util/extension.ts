@@ -5,14 +5,14 @@ import { RigRole } from '../constants/rig';
 import { ViewerTypes } from '../constants/viewer-types';
 import { fetchExtensionManifest } from './api';
 
-export async function fetchUserExtensionManifest(isLocal: boolean, userId: string, secret: string, clientId: string, version: string): Promise<ExtensionManifest> {
+export async function fetchUserExtensionManifest(userId: string, secret: string, clientId: string, version: string): Promise<ExtensionManifest> {
   const tokenSpec: TokenSpec = {
     role: RigRole,
     secret,
     userId,
   };
   const token = createSignedToken(tokenSpec);
-  return await fetchExtensionManifest(isLocal, clientId, version, token);
+  return await fetchExtensionManifest(clientId, version, token);
 }
 
 export function createExtensionToken(newRole: string, linkedUserId: string, channelId: string, secret: string, opaqueId: string): string {

@@ -86,7 +86,7 @@ module.exports = function(app) {
   });
 
   app.post('/frontend', async (req, res) => {
-    const { projectFolderPath, frontendCommand, frontendFolderPath, isLocal, port } = req.body;
+    const { projectFolderPath, frontendCommand, frontendFolderPath, port } = req.body;
     try {
       let args = [], command;
       const options = {};
@@ -109,9 +109,6 @@ module.exports = function(app) {
           '-p',
           port,
         ];
-        if (isLocal) {
-          args.push('-l');
-        }
         command = 'node';
       }
       const { child, exitCode } = await spawn(command, args, options, true);

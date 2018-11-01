@@ -23,7 +23,6 @@ const setupShallow = setupShallowTest(ExtensionViewContainer, () => ({
   },
   extensionViews: createViewsForTest(0, '', ''),
   isDisplayed: true,
-  isLocal: true,
   manifest: createExtensionManifestForTest(),
   secret: '',
   createExtensionViewHandler: jest.fn().mockImplementation(() => Promise.resolve()),

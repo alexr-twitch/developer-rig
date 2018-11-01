@@ -37,7 +37,6 @@ describe('<ConfigurationServiceView />', () => {
     },
     rigProject: {
       extensionViews: [],
-      isLocal: true,
       projectFolderPath: 'test',
       manifest: createExtensionManifestForTest(),
       secret: 'test',

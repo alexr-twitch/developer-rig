@@ -160,7 +160,7 @@ export class RigComponent extends React.Component<Props, State> {
 
   public deleteProject = async () => {
     const message = `Are you sure you want to delete project "${this.state.currentProject.manifest.name}"?\n\n` +
-      `This will not delete any files${this.state.currentProject.isLocal ? '' : ' or affect your extension online'}.`;
+      'This will not delete any files or affect your extension online.';
     if (confirm(message)) {
       await stopHosting();
       this.setState((previousState) => {
@@ -210,9 +210,7 @@ export class RigComponent extends React.Component<Props, State> {
               onChange={this.updateProject}
               refreshViews={this.refreshViews}
             />} />
-            {configurations && <Route exact path={NavItem.ConfigurationService} render={() => currentProject.isLocal ?
-            <Redirect to={NavItem.ProjectOverview} /> :
-            <ConfigurationServiceView
+            {configurations && <Route exact path={NavItem.ConfigurationService} render={() => <ConfigurationServiceView
               authToken={this.props.session.authToken}
               configurations={configurations}
               rigProject={currentProject}
@@ -225,7 +223,6 @@ export class RigComponent extends React.Component<Props, State> {
               isDisplayed={location.pathname === NavItem.ExtensionViews}
               deleteExtensionViewHandler={this.deleteExtensionView}
               extensionViews={currentProject.extensionViews}
-              isLocal={currentProject.isLocal}
               manifest={currentProject.manifest}
               secret={currentProject.secret}
               editViewHandler={this.editView}
@@ -276,7 +273,6 @@ export class RigComponent extends React.Component<Props, State> {
       const serializedExtensionViews = localStorage.getItem(LocalStorageKeys.ExtensionViews);
       const currentProject: RigProject = {
         extensionViews: serializedExtensionViews ? JSON.parse(serializedExtensionViews) : [],
-        isLocal: process.env.EXT_SECRET.startsWith('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'),
         projectFolderPath: '',
         manifest: { id: process.env.EXT_CLIENT_ID, version: process.env.EXT_VERSION } as ExtensionManifest,
         secret: process.env.EXT_SECRET,
@@ -288,9 +284,9 @@ export class RigComponent extends React.Component<Props, State> {
       this.setState({ currentProject, projects });
       localStorage.setItem(LocalStorageKeys.Projects, JSON.stringify(projects));
       localStorage.setItem(LocalStorageKeys.CurrentProjectIndex, '0');
-      const { isLocal, secret, manifest: { id: clientId, version } } = currentProject;
+      const { secret, manifest: { id: clientId, version } } = currentProject;
       try {
-        const manifest = await fetchUserExtensionManifest(isLocal, userId, secret, clientId, version);
+        const manifest = await fetchUserExtensionManifest(userId, secret, clientId, version);
         this.setState((previousState) => {
           Object.assign(previousState.currentProject, { manifest });
           localStorage.setItem(LocalStorageKeys.Projects, JSON.stringify([previousState.currentProject]));

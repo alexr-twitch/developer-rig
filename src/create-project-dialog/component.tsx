@@ -6,9 +6,7 @@ import { ExtensionManifest } from '../core/models/manifest';
 import { createProject, Example, fetchExamples } from '../util/api';
 import { RigProject } from '../core/models/rig';
 import { fetchUserExtensionManifest } from '../util/extension';
-import { generateManifest } from '../util/generate-manifest';
 import { ExtensionViewType } from '../constants/extension-coordinator';
-import { LocalStorageKeys } from '../constants/rig';
 
 interface Props {
   userId: string;
@@ -18,7 +16,6 @@ interface Props {
 
 interface State {
   rigProject: RigProject;
-  localName: string;
   clientId: string;
   version: string;
   codeGenerationOption: string;
@@ -53,7 +50,6 @@ export class CreateProjectDialog extends React.Component<Props, State>{
   private initial: { isMounted: boolean } = { isMounted: false };
   public state: State = {
     rigProject: {
-      isLocal: false,
       projectFolderPath: '',
       manifest: {} as ExtensionManifest,
       secret: process.env.EXT_SECRET,
@@ -61,7 +57,6 @@ export class CreateProjectDialog extends React.Component<Props, State>{
       frontendCommand: '',
       backendCommand: '',
     } as RigProject,
-    localName: '',
     clientId: process.env.EXT_CLIENT_ID || '',
     version: process.env.EXT_VERSION || '',
     codeGenerationOption: CodeGenerationOption.Example,
@@ -100,7 +95,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
           }
         });
       }
-    } else if (name !== 'localName' || this.state.rigProject.isLocal) {
+    } else {
       const convert = typeof this.state[name] === 'number' ? (s: string) => Number(s) : (s: string) => s;
       if (Object.getOwnPropertyDescriptor(this.state.rigProject, name)) {
         const rigProject = Object.assign(this.state.rigProject, { [name]: convert(value) }) as RigProject;
@@ -115,38 +110,17 @@ export class CreateProjectDialog extends React.Component<Props, State>{
     this.setState({ exampleIndex });
   }
 
-  public onChangeIsLocal = (input: React.FormEvent<HTMLInputElement>) => {
-    const target = input.currentTarget;
-    const value = Boolean(Number(target.value));
-    this.setState((previousState) => {
-      const rigProject = Object.assign({}, previousState.rigProject, { isLocal: value });
-      return { rigProject };
-    });
-  }
-
   private canSave = () => {
     // The project must have a project folder root if the code generation
     // option is not None.
-    const { localName, codeGenerationOption, rigProject, extensionTypes } = this.state;
+    const { codeGenerationOption, rigProject } = this.state;
     if (codeGenerationOption !== CodeGenerationOption.None && !rigProject.projectFolderPath.trim()) {
       return false;
     }
 
-    if (rigProject.isLocal) {
-      // The project must be named.
-      if (!localName.trim()) {
-        return false;
-      }
-
-      // At least one extension type must be selected.
-      if (!extensionTypes) {
-        return false;
-      }
-    } else {
-      // An online extension must be selected.
-      if (!rigProject.manifest.id) {
-        return false;
-      }
+    // An online extension must be selected.
+    if (!rigProject.manifest.id) {
+      return false;
     }
     return true;
   }
@@ -161,15 +135,12 @@ export class CreateProjectDialog extends React.Component<Props, State>{
   }
 
   private constructBackendCommand(example: Example) {
-    const { codeGenerationOption, rigProject: { isLocal, manifest: { id: clientId }, secret } } = this.state;
+    const { codeGenerationOption, rigProject: { manifest: { id: clientId }, secret } } = this.state;
     if (codeGenerationOption === CodeGenerationOption.Example && example.backendCommand) {
       let backendCommand = example.backendCommand
         .replace('{clientId}', clientId)
         .replace('{secret}', secret)
         .replace('{ownerId}', this.props.userId);
-      if (isLocal) {
-        backendCommand += ' -l';
-      }
       return backendCommand;
     }
     return '';
@@ -179,11 +150,6 @@ export class CreateProjectDialog extends React.Component<Props, State>{
     if (this.canSave()) {
       try {
         this.setState({ errorMessage: 'Creating your project...' });
-        if (this.state.rigProject.isLocal) {
-          const ownerName: string = JSON.parse(localStorage.getItem(LocalStorageKeys.RigLogin)).login;
-          this.state.rigProject.manifest = generateManifest('https://localhost.rig.twitch.tv:8080',
-            ownerName, this.state.localName.trim(), this.getTypes());
-        }
         const { codeGenerationOption, exampleIndex, examples } = this.state;
         const projectFolderPath = this.state.rigProject.projectFolderPath.trim();
         if (codeGenerationOption !== CodeGenerationOption.None || projectFolderPath) {
@@ -205,9 +171,9 @@ export class CreateProjectDialog extends React.Component<Props, State>{
   }
 
   private fetchExtensionManifest = async () => {
-    const { clientId, version, rigProject: { isLocal, secret } } = this.state;
+    const { clientId, version, rigProject: { secret } } = this.state;
     try {
-      const manifest = await fetchUserExtensionManifest(isLocal, this.props.userId, secret, clientId, version);
+      const manifest = await fetchUserExtensionManifest(this.props.userId, secret, clientId, version);
       const rigProject = Object.assign({}, this.state.rigProject, { manifest });
       this.setState({ rigProject });
     } catch (ex) {
@@ -226,10 +192,8 @@ export class CreateProjectDialog extends React.Component<Props, State>{
   public render() {
     const pdp = 'project-dialog-property';
     const [pdpi, pdpri] = [`${pdp}__input`, `${pdp}__right-input`];
-    const { codeGenerationOption, extensionTypes, rigProject } = this.state;
-    const nameInputClassName = this.constructClassName(!rigProject.isLocal || this.state.localName.trim(), pdpi, 'half');
-    const localName = rigProject.isLocal ? this.state.localName : rigProject.manifest.name || '';
-    const typesClassName = this.constructClassName(extensionTypes !== 0, `${pdp}__name`);
+    const { codeGenerationOption, rigProject } = this.state;
+    const nameInputClassName = this.constructClassName(true, pdpi, 'half');
     const clientIdClassName = this.constructClassName(this.state.clientId.trim(), pdpri, 'grid');
     const secretClassName = this.constructClassName(rigProject.secret.trim(), pdpri, 'grid');
     const versionClassName = this.constructClassName(this.state.version.trim(), pdpri, 'grid');
@@ -252,28 +216,9 @@ export class CreateProjectDialog extends React.Component<Props, State>{
             <div className="project-dialog__section project-dialog__section--left">
               <label className="project-dialog-property">
                 <div className="project-dialog-property__name">Extension Project Name</div>
-                <input className={nameInputClassName} type="text" name="localName" value={localName} onChange={this.onChange} disabled={!rigProject.isLocal} title="Enter a name for your project.  This is set for you for online extensions." />
+                <input className={nameInputClassName} type="text" value={rigProject.manifest.name || ''} disabled title="This is the name of your project." />
               </label>
-              {rigProject.isLocal && <div className="project-dialog-property">
-                <div className={typesClassName}>Extension Types</div>
-                <label className="project-dialog-property__value">
-                  <input className="project-dialog-property__left-input" type="checkbox" name="extensionTypes" value={ExtensionTypes.Overlay} checked={Boolean(extensionTypes & ExtensionTypes.Overlay)} onChange={this.onChange} />
-                  <span className="project-dialog-property__right-text">Video Overlay</span>
-                </label>
-                <label className="project-dialog-property__value">
-                  <input className="project-dialog-property__left-input" type="checkbox" name="extensionTypes" value={ExtensionTypes.Panel} checked={Boolean(extensionTypes & ExtensionTypes.Panel)} onChange={this.onChange} />
-                  <span className="project-dialog-property__right-text">Panel</span>
-                </label>
-                <label className="project-dialog-property__value">
-                  <input className="project-dialog-property__left-input" type="checkbox" name="extensionTypes" value={ExtensionTypes.Component} checked={Boolean(extensionTypes & ExtensionTypes.Component)} onChange={this.onChange} />
-                  <span className="project-dialog-property__right-text">Component</span>
-                </label>
-                <label className="project-dialog-property__value">
-                  <input className="project-dialog-property__left-input" type="checkbox" name="extensionTypes" value={ExtensionTypes.Mobile} checked={Boolean(extensionTypes & ExtensionTypes.Mobile)} onChange={this.onChange} />
-                  <span className="project-dialog-property__right-text">Mobile</span>
-                </label>
-              </div>}
-              {!rigProject.isLocal && <div className="project-dialog-property">
+              <div className="project-dialog-property">
                 <label className="project-dialog-property__value project-dialog-property__value--grid">
                   <span className="project-dialog-property__left-text project-dialog-property__left-text--grid">Client ID</span>
                   <input className={clientIdClassName} type="text" name="clientId" value={this.state.clientId} onChange={this.onChange} />
@@ -288,7 +233,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
                 </label>
                 <button className="project-dialog-property__button" onClick={this.fetchExtensionManifest}>Fetch</button>
                 <textarea className={manifestClassName} value={JSON.stringify(rigProject.manifest)} disabled={true} />
-              </div>}
+              </div>
               <label className="project-dialog-property" title="This is the folder we will create to contain your project. You must have already created its parent folder.">
                 <div className="project-dialog-property__name">Project Folder</div>
                 <input className={projectFolderClassName} type="text" name="projectFolderPath" value={rigProject.projectFolderPath} onChange={this.onChange} />

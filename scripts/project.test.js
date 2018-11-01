@@ -60,7 +60,6 @@ async function runTests() {
   await postRoutes['/frontend']({
     body: {
       frontendFolderPath: join('extensions-hello-world', 'public'),
-      isLocal: true,
       port: 8080,
       projectFolderPath,
     },

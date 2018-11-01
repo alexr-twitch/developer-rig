@@ -3,7 +3,6 @@ import { SegmentMap } from '../../util/api';
 
 export interface RigProject {
   extensionViews: RigExtensionView[],
-  isLocal: boolean;
   projectFolderPath: string;
   manifest: ExtensionManifest;
   secret: string;

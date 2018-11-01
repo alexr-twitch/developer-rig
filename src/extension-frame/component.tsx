@@ -14,7 +14,6 @@ export interface Props {
   installationAbilities: ExtensionCoordinator.ExtensionInstallationAbilities;
   type: string;
   mode: string;
-  isLocal: boolean;
   isPopout: boolean;
   bindIframeToParent: (iframe: HTMLIFrameElement) => void;
 }
@@ -44,14 +43,6 @@ export class ExtensionFrame extends React.Component<Props> {
 
   public extensionFrameInit = () => {
     const extension = JSON.parse(JSON.stringify(this.props.extension));
-    if (this.props.isLocal) {
-      ['config', 'component', 'liveConfig', 'mobile', 'panel', 'videoOverlay'].forEach((viewName) => {
-        const view = extension.views[viewName];
-        if (view && view.viewerUrl) {
-          view.viewerUrl += '?developer_rig=local';
-        }
-      });
-    }
     const extensionFrameOptions: ExtensionCoordinator.ExtensionFrameOptions = {
       anchor: this.props.type as ExtensionCoordinator.ExtensionAnchor,
       channelId: parseInt(this.props.channelId, 10),
