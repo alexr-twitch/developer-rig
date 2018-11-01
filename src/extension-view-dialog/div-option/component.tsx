@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './component.sass';
+import classNames = require('classnames');
 
 interface DivOptionProps {
   img: string;
@@ -10,17 +11,23 @@ interface DivOptionProps {
 }
 export class DivOption extends React.Component<DivOptionProps> {
   public render() {
+    const boxClassName = classNames('div-option__box', {
+      'div-option__box--selected': this.props.checked,
+    });
+    const textClassName = classNames('div-option__text', {
+      'div-option__text--selected': this.props.checked,
+    });
     return (
-      <div className="extension-container__block">
-        <label className="extension-type-label">
-          <input type="radio" name="extensionViewType" value={this.props.value} onChange={this.props.onChange} defaultChecked={this.props.checked}/>
-          <div className="extension-type-box">
+      <div className="div-option">
+        <label className="div-option__label">
+          <input type="radio" className="div-option__input" name="extensionViewType" value={this.props.value} onChange={this.props.onChange} defaultChecked={this.props.checked} />
+          <span className={boxClassName}>
             <img
-              className='extension-type-box__img'
+              className='div-option__image'
               alt={this.props.value}
               src={this.props.img} />
-          </div>
-          <div className={this.props.checked ? 'extension-type-text dialog-selected': 'extension-type-text'}>{this.props.name}</div>
+          </span>
+          <span className={textClassName}>{this.props.name}</span>
         </label>
       </div>
     );

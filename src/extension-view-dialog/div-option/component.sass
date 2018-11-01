@@ -1,50 +1,43 @@
-@import '../component.sass'
 $dimension: 70px
+$offset: $dimension / 2 - 4
 
-.extension-container__block
-  @extend .container__block
+.div-option
+  display: inline-block
   margin: 3px
 
-  .block__extension-type-label
-    visibility: hidden
-    position: absolute
+  &__label
     cursor: pointer
+    display: block
 
-  .extension-type-label__extension-type-text--color-black
-    @extend .extension-type-text
+  &__input
+    margin-left: $offset
+    margin-top: $offset
+    position: absolute
+    transform: scale(0.1, 0.1)
 
-  .extension-type-label__extension-type-text--color-purple
-    @extend .extension-type-text
-    color: #7D55C7
+  &__box
+    border: 1px solid #DAD8DE
+    border-radius: 5px
+    display: table-cell
+    height: $dimension
+    vertical-align: middle
+    width: $dimension
 
-  .dialog-selected
-    color: black
+    &--selected
+      border-color: #7D55C7
 
-.extension-type-box
-  margin-top: 10px
-  margin-right: 12px
-  height: $dimension
-  width: $dimension
-  border-radius: 5px
-  border: 1px solid #DAD8DE
-  display: table-cell
-  vertical-align: middle
-  text-align: center
+  &__image
+    display: block
+    margin: 0 auto
+    position: relative
 
-.extension-type-label > input
-  visibility: hidden
-  position: absolute
+  &__text
+    color: #706A7C
+    display: block
+    font-size: 10px
+    margin-top: 3px
+    text-align: center
+    width: $dimension
 
-.extension-type-label > input + div
-  cursor: pointer
-
-.extension-type-label > input:checked + div
-  color: #7D55C7
-  border-color: #7D55C7
-
-.extension-type-text
-  color: #706A7C
-  margin: 3px
-  font-size: 10px
-  text-align: center
-  width: $dimension
+    &--selected
+      color: black
