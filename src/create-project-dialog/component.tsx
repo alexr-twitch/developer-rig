@@ -53,7 +53,7 @@ export class CreateProjectDialog extends React.Component<Props, State>{
   private initial: { isMounted: boolean } = { isMounted: false };
   public state: State = {
     rigProject: {
-      isLocal: true,
+      isLocal: false,
       projectFolderPath: '',
       manifest: {} as ExtensionManifest,
       secret: process.env.EXT_SECRET,
@@ -254,17 +254,6 @@ export class CreateProjectDialog extends React.Component<Props, State>{
                 <div className="project-dialog-property__name">Extension Project Name</div>
                 <input className={nameInputClassName} type="text" name="localName" value={localName} onChange={this.onChange} disabled={!rigProject.isLocal} title="Enter a name for your project.  This is set for you for online extensions." />
               </label>
-              <div className="project-dialog-property">
-                <div className="project-dialog-property__name">Choose Extension</div>
-                <label className="project-dialog-property__value">
-                  <input className="project-dialog-property__left-input" type="radio" name="isLocal" value={1} checked={rigProject.isLocal} onChange={this.onChangeIsLocal} />
-                  <span className="project-dialog-property__right-text">Create Local Extension</span>
-                </label>
-                <label className="project-dialog-property__value">
-                  <input className="project-dialog-property__left-input" type="radio" name="isLocal" value={0} checked={!rigProject.isLocal} onChange={this.onChangeIsLocal} />
-                  <span className="project-dialog-property__right-text">Use Already Created Online Extension</span>
-                </label>
-              </div>
               {rigProject.isLocal && <div className="project-dialog-property">
                 <div className={typesClassName}>Extension Types</div>
                 <label className="project-dialog-property__value">

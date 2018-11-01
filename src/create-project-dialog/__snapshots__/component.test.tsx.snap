@@ -64,8 +64,8 @@ ShallowWrapper {
                                                   Extension Project Name
                                         </div>
                                         <input
-                                                  className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                  disabled={false}
+                                                  className="project-dialog-property__input project-dialog-property__input--half"
+                                                  disabled={true}
                                                   name="localName"
                                                   onChange={[Function]}
                                                   title="Enter a name for your project.  This is set for you for online extensions."
@@ -76,122 +76,65 @@ ShallowWrapper {
                               <div
                                         className="project-dialog-property"
                               >
-                                        <div
-                                                  className="project-dialog-property__name"
-                                        >
-                                                  Choose Extension
-                                        </div>
                                         <label
-                                                  className="project-dialog-property__value"
+                                                  className="project-dialog-property__value project-dialog-property__value--grid"
                                         >
-                                                  <input
-                                                            checked={true}
-                                                            className="project-dialog-property__left-input"
-                                                            name="isLocal"
-                                                            onChange={[Function]}
-                                                            type="radio"
-                                                            value={1}
-                                                  />
                                                   <span
-                                                            className="project-dialog-property__right-text"
+                                                            className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                   >
-                                                            Create Local Extension
+                                                            Client ID
                                                   </span>
+                                                  <input
+                                                            className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                            name="clientId"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                            value="test"
+                                                  />
                                         </label>
                                         <label
-                                                  className="project-dialog-property__value"
+                                                  className="project-dialog-property__value project-dialog-property__value--grid"
                                         >
-                                                  <input
-                                                            checked={false}
-                                                            className="project-dialog-property__left-input"
-                                                            name="isLocal"
-                                                            onChange={[Function]}
-                                                            type="radio"
-                                                            value={0}
-                                                  />
                                                   <span
-                                                            className="project-dialog-property__right-text"
+                                                            className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                   >
-                                                            Use Already Created Online Extension
+                                                            Secret
                                                   </span>
-                                        </label>
-                              </div>
-                              <div
-                                        className="project-dialog-property"
-                              >
-                                        <div
-                                                  className="project-dialog-property__name"
-                                        >
-                                                  Extension Types
-                                        </div>
-                                        <label
-                                                  className="project-dialog-property__value"
-                                        >
                                                   <input
-                                                            checked={false}
-                                                            className="project-dialog-property__left-input"
-                                                            name="extensionTypes"
+                                                            className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                            name="secret"
                                                             onChange={[Function]}
-                                                            type="checkbox"
-                                                            value={4}
+                                                            type="text"
+                                                            value="test"
                                                   />
-                                                  <span
-                                                            className="project-dialog-property__right-text"
-                                                  >
-                                                            Video Overlay
-                                                  </span>
                                         </label>
                                         <label
-                                                  className="project-dialog-property__value"
+                                                  className="project-dialog-property__value project-dialog-property__value--grid"
                                         >
-                                                  <input
-                                                            checked={true}
-                                                            className="project-dialog-property__left-input"
-                                                            name="extensionTypes"
-                                                            onChange={[Function]}
-                                                            type="checkbox"
-                                                            value={1}
-                                                  />
                                                   <span
-                                                            className="project-dialog-property__right-text"
+                                                            className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                   >
-                                                            Panel
+                                                            Version
                                                   </span>
+                                                  <input
+                                                            className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                            name="version"
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                            value="test"
+                                                  />
                                         </label>
-                                        <label
-                                                  className="project-dialog-property__value"
+                                        <button
+                                                  className="project-dialog-property__button"
+                                                  onClick={[Function]}
                                         >
-                                                  <input
-                                                            checked={false}
-                                                            className="project-dialog-property__left-input"
-                                                            name="extensionTypes"
-                                                            onChange={[Function]}
-                                                            type="checkbox"
-                                                            value={2}
-                                                  />
-                                                  <span
-                                                            className="project-dialog-property__right-text"
-                                                  >
-                                                            Component
-                                                  </span>
-                                        </label>
-                                        <label
-                                                  className="project-dialog-property__value"
-                                        >
-                                                  <input
-                                                            checked={false}
-                                                            className="project-dialog-property__left-input"
-                                                            name="extensionTypes"
-                                                            onChange={[Function]}
-                                                            type="checkbox"
-                                                            value={8}
-                                                  />
-                                                  <span
-                                                            className="project-dialog-property__right-text"
-                                                  >
-                                                            Mobile
-                                                  </span>
-                                        </label>
+                                                  Fetch
+                                        </button>
+                                        <textarea
+                                                  className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                  disabled={true}
+                                                  value="{}"
+                                        />
                               </div>
                               <label
                                         className="project-dialog-property"
@@ -376,8 +319,8 @@ ShallowWrapper {
                                                         Extension Project Name
                                           </div>
                                           <input
-                                                        className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                        disabled={false}
+                                                        className="project-dialog-property__input project-dialog-property__input--half"
+                                                        disabled={true}
                                                         name="localName"
                                                         onChange={[Function]}
                                                         title="Enter a name for your project.  This is set for you for online extensions."
@@ -388,122 +331,65 @@ ShallowWrapper {
                             <div
                                           className="project-dialog-property"
                             >
-                                          <div
-                                                        className="project-dialog-property__name"
-                                          >
-                                                        Choose Extension
-                                          </div>
                                           <label
-                                                        className="project-dialog-property__value"
+                                                        className="project-dialog-property__value project-dialog-property__value--grid"
                                           >
-                                                        <input
-                                                                      checked={true}
-                                                                      className="project-dialog-property__left-input"
-                                                                      name="isLocal"
-                                                                      onChange={[Function]}
-                                                                      type="radio"
-                                                                      value={1}
-                                                        />
                                                         <span
-                                                                      className="project-dialog-property__right-text"
+                                                                      className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                         >
-                                                                      Create Local Extension
+                                                                      Client ID
                                                         </span>
+                                                        <input
+                                                                      className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                      name="clientId"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                                      value="test"
+                                                        />
                                           </label>
                                           <label
-                                                        className="project-dialog-property__value"
+                                                        className="project-dialog-property__value project-dialog-property__value--grid"
                                           >
-                                                        <input
-                                                                      checked={false}
-                                                                      className="project-dialog-property__left-input"
-                                                                      name="isLocal"
-                                                                      onChange={[Function]}
-                                                                      type="radio"
-                                                                      value={0}
-                                                        />
                                                         <span
-                                                                      className="project-dialog-property__right-text"
+                                                                      className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                         >
-                                                                      Use Already Created Online Extension
+                                                                      Secret
                                                         </span>
-                                          </label>
-                            </div>
-                            <div
-                                          className="project-dialog-property"
-                            >
-                                          <div
-                                                        className="project-dialog-property__name"
-                                          >
-                                                        Extension Types
-                                          </div>
-                                          <label
-                                                        className="project-dialog-property__value"
-                                          >
                                                         <input
-                                                                      checked={false}
-                                                                      className="project-dialog-property__left-input"
-                                                                      name="extensionTypes"
+                                                                      className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                      name="secret"
                                                                       onChange={[Function]}
-                                                                      type="checkbox"
-                                                                      value={4}
+                                                                      type="text"
+                                                                      value="test"
                                                         />
-                                                        <span
-                                                                      className="project-dialog-property__right-text"
-                                                        >
-                                                                      Video Overlay
-                                                        </span>
                                           </label>
                                           <label
-                                                        className="project-dialog-property__value"
+                                                        className="project-dialog-property__value project-dialog-property__value--grid"
                                           >
-                                                        <input
-                                                                      checked={true}
-                                                                      className="project-dialog-property__left-input"
-                                                                      name="extensionTypes"
-                                                                      onChange={[Function]}
-                                                                      type="checkbox"
-                                                                      value={1}
-                                                        />
                                                         <span
-                                                                      className="project-dialog-property__right-text"
+                                                                      className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                         >
-                                                                      Panel
+                                                                      Version
                                                         </span>
+                                                        <input
+                                                                      className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                      name="version"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                                      value="test"
+                                                        />
                                           </label>
-                                          <label
-                                                        className="project-dialog-property__value"
+                                          <button
+                                                        className="project-dialog-property__button"
+                                                        onClick={[Function]}
                                           >
-                                                        <input
-                                                                      checked={false}
-                                                                      className="project-dialog-property__left-input"
-                                                                      name="extensionTypes"
-                                                                      onChange={[Function]}
-                                                                      type="checkbox"
-                                                                      value={2}
-                                                        />
-                                                        <span
-                                                                      className="project-dialog-property__right-text"
-                                                        >
-                                                                      Component
-                                                        </span>
-                                          </label>
-                                          <label
-                                                        className="project-dialog-property__value"
-                                          >
-                                                        <input
-                                                                      checked={false}
-                                                                      className="project-dialog-property__left-input"
-                                                                      name="extensionTypes"
-                                                                      onChange={[Function]}
-                                                                      type="checkbox"
-                                                                      value={8}
-                                                        />
-                                                        <span
-                                                                      className="project-dialog-property__right-text"
-                                                        >
-                                                                      Mobile
-                                                        </span>
-                                          </label>
+                                                        Fetch
+                                          </button>
+                                          <textarea
+                                                        className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                        disabled={true}
+                                                        value="{}"
+                                          />
                             </div>
                             <label
                                           className="project-dialog-property"
@@ -730,8 +616,8 @@ ShallowWrapper {
                                                       Extension Project Name
                                     </div>
                                     <input
-                                                      className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                      disabled={false}
+                                                      className="project-dialog-property__input project-dialog-property__input--half"
+                                                      disabled={true}
                                                       name="localName"
                                                       onChange={[Function]}
                                                       title="Enter a name for your project.  This is set for you for online extensions."
@@ -742,122 +628,65 @@ ShallowWrapper {
                   <div
                                     className="project-dialog-property"
                   >
-                                    <div
-                                                      className="project-dialog-property__name"
-                                    >
-                                                      Choose Extension
-                                    </div>
                                     <label
-                                                      className="project-dialog-property__value"
+                                                      className="project-dialog-property__value project-dialog-property__value--grid"
                                     >
-                                                      <input
-                                                                        checked={true}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="isLocal"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value={1}
-                                                      />
                                                       <span
-                                                                        className="project-dialog-property__right-text"
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                       >
-                                                                        Create Local Extension
+                                                                        Client ID
                                                       </span>
+                                                      <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="clientId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                      />
                                     </label>
                                     <label
-                                                      className="project-dialog-property__value"
+                                                      className="project-dialog-property__value project-dialog-property__value--grid"
                                     >
-                                                      <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="isLocal"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value={0}
-                                                      />
                                                       <span
-                                                                        className="project-dialog-property__right-text"
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                       >
-                                                                        Use Already Created Online Extension
+                                                                        Secret
                                                       </span>
-                                    </label>
-                  </div>
-                  <div
-                                    className="project-dialog-property"
-                  >
-                                    <div
-                                                      className="project-dialog-property__name"
-                                    >
-                                                      Extension Types
-                                    </div>
-                                    <label
-                                                      className="project-dialog-property__value"
-                                    >
                                                       <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="secret"
                                                                         onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={4}
+                                                                        type="text"
+                                                                        value="test"
                                                       />
-                                                      <span
-                                                                        className="project-dialog-property__right-text"
-                                                      >
-                                                                        Video Overlay
-                                                      </span>
                                     </label>
                                     <label
-                                                      className="project-dialog-property__value"
+                                                      className="project-dialog-property__value project-dialog-property__value--grid"
                                     >
-                                                      <input
-                                                                        checked={true}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={1}
-                                                      />
                                                       <span
-                                                                        className="project-dialog-property__right-text"
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                       >
-                                                                        Panel
+                                                                        Version
                                                       </span>
+                                                      <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="version"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                      />
                                     </label>
-                                    <label
-                                                      className="project-dialog-property__value"
+                                    <button
+                                                      className="project-dialog-property__button"
+                                                      onClick={[Function]}
                                     >
-                                                      <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={2}
-                                                      />
-                                                      <span
-                                                                        className="project-dialog-property__right-text"
-                                                      >
-                                                                        Component
-                                                      </span>
-                                    </label>
-                                    <label
-                                                      className="project-dialog-property__value"
-                                    >
-                                                      <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={8}
-                                                      />
-                                                      <span
-                                                                        className="project-dialog-property__right-text"
-                                                      >
-                                                                        Mobile
-                                                      </span>
-                                    </label>
+                                                      Fetch
+                                    </button>
+                                    <textarea
+                                                      className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                      disabled={true}
+                                                      value="{}"
+                                    />
                   </div>
                   <label
                                     className="project-dialog-property"
@@ -982,8 +811,8 @@ ShallowWrapper {
                                             Extension Project Name
                       </div>
                       <input
-                                            className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                            disabled={false}
+                                            className="project-dialog-property__input project-dialog-property__input--half"
+                                            disabled={true}
                                             name="localName"
                                             onChange={[Function]}
                                             title="Enter a name for your project.  This is set for you for online extensions."
@@ -991,127 +820,70 @@ ShallowWrapper {
                                             value=""
                       />
 </label>,
-                    <div
-                      className="project-dialog-property"
->
-                      <div
-                                            className="project-dialog-property__name"
-                      >
-                                            Choose Extension
-                      </div>
-                      <label
-                                            className="project-dialog-property__value"
-                      >
-                                            <input
-                                                                  checked={true}
-                                                                  className="project-dialog-property__left-input"
-                                                                  name="isLocal"
-                                                                  onChange={[Function]}
-                                                                  type="radio"
-                                                                  value={1}
-                                            />
-                                            <span
-                                                                  className="project-dialog-property__right-text"
-                                            >
-                                                                  Create Local Extension
-                                            </span>
-                      </label>
-                      <label
-                                            className="project-dialog-property__value"
-                      >
-                                            <input
-                                                                  checked={false}
-                                                                  className="project-dialog-property__left-input"
-                                                                  name="isLocal"
-                                                                  onChange={[Function]}
-                                                                  type="radio"
-                                                                  value={0}
-                                            />
-                                            <span
-                                                                  className="project-dialog-property__right-text"
-                                            >
-                                                                  Use Already Created Online Extension
-                                            </span>
-                      </label>
-</div>,
-                    <div
-                      className="project-dialog-property"
->
-                      <div
-                                            className="project-dialog-property__name"
-                      >
-                                            Extension Types
-                      </div>
-                      <label
-                                            className="project-dialog-property__value"
-                      >
-                                            <input
-                                                                  checked={false}
-                                                                  className="project-dialog-property__left-input"
-                                                                  name="extensionTypes"
-                                                                  onChange={[Function]}
-                                                                  type="checkbox"
-                                                                  value={4}
-                                            />
-                                            <span
-                                                                  className="project-dialog-property__right-text"
-                                            >
-                                                                  Video Overlay
-                                            </span>
-                      </label>
-                      <label
-                                            className="project-dialog-property__value"
-                      >
-                                            <input
-                                                                  checked={true}
-                                                                  className="project-dialog-property__left-input"
-                                                                  name="extensionTypes"
-                                                                  onChange={[Function]}
-                                                                  type="checkbox"
-                                                                  value={1}
-                                            />
-                                            <span
-                                                                  className="project-dialog-property__right-text"
-                                            >
-                                                                  Panel
-                                            </span>
-                      </label>
-                      <label
-                                            className="project-dialog-property__value"
-                      >
-                                            <input
-                                                                  checked={false}
-                                                                  className="project-dialog-property__left-input"
-                                                                  name="extensionTypes"
-                                                                  onChange={[Function]}
-                                                                  type="checkbox"
-                                                                  value={2}
-                                            />
-                                            <span
-                                                                  className="project-dialog-property__right-text"
-                                            >
-                                                                  Component
-                                            </span>
-                      </label>
-                      <label
-                                            className="project-dialog-property__value"
-                      >
-                                            <input
-                                                                  checked={false}
-                                                                  className="project-dialog-property__left-input"
-                                                                  name="extensionTypes"
-                                                                  onChange={[Function]}
-                                                                  type="checkbox"
-                                                                  value={8}
-                                            />
-                                            <span
-                                                                  className="project-dialog-property__right-text"
-                                            >
-                                                                  Mobile
-                                            </span>
-                      </label>
-</div>,
                     false,
+                    <div
+                      className="project-dialog-property"
+>
+                      <label
+                                            className="project-dialog-property__value project-dialog-property__value--grid"
+                      >
+                                            <span
+                                                                  className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                                            >
+                                                                  Client ID
+                                            </span>
+                                            <input
+                                                                  className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                  name="clientId"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                                                  value="test"
+                                            />
+                      </label>
+                      <label
+                                            className="project-dialog-property__value project-dialog-property__value--grid"
+                      >
+                                            <span
+                                                                  className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                                            >
+                                                                  Secret
+                                            </span>
+                                            <input
+                                                                  className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                  name="secret"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                                                  value="test"
+                                            />
+                      </label>
+                      <label
+                                            className="project-dialog-property__value project-dialog-property__value--grid"
+                      >
+                                            <span
+                                                                  className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                                            >
+                                                                  Version
+                                            </span>
+                                            <input
+                                                                  className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                  name="version"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                                                  value="test"
+                                            />
+                      </label>
+                      <button
+                                            className="project-dialog-property__button"
+                                            onClick={[Function]}
+                      >
+                                            Fetch
+                      </button>
+                      <textarea
+                                            className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                            disabled={true}
+                                            value="{}"
+                      />
+</div>,
                     <label
                       className="project-dialog-property"
                       title="This is the folder we will create to contain your project. You must have already created its parent folder."
@@ -1189,8 +961,8 @@ ShallowWrapper {
                           Extension Project Name
 </div>,
                         <input
-                          className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                          disabled={false}
+                          className="project-dialog-property__input project-dialog-property__input--half"
+                          disabled={true}
                           name="localName"
                           onChange={[Function]}
                           title="Enter a name for your project.  This is set for you for online extensions."
@@ -1219,8 +991,8 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "className": "project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error",
-                          "disabled": false,
+                          "className": "project-dialog-property__input project-dialog-property__input--half",
+                          "disabled": true,
                           "name": "localName",
                           "onChange": [Function],
                           "title": "Enter a name for your project.  This is set for you for online extensions.",
@@ -1234,501 +1006,265 @@ ShallowWrapper {
                     ],
                     "type": "label",
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <div
-                          className="project-dialog-property__name"
->
-                          Choose Extension
-</div>,
-                        <label
-                          className="project-dialog-property__value"
->
-                          <input
-                                                    checked={true}
-                                                    className="project-dialog-property__left-input"
-                                                    name="isLocal"
-                                                    onChange={[Function]}
-                                                    type="radio"
-                                                    value={1}
-                          />
-                          <span
-                                                    className="project-dialog-property__right-text"
-                          >
-                                                    Create Local Extension
-                          </span>
-</label>,
-                        <label
-                          className="project-dialog-property__value"
->
-                          <input
-                                                    checked={false}
-                                                    className="project-dialog-property__left-input"
-                                                    name="isLocal"
-                                                    onChange={[Function]}
-                                                    type="radio"
-                                                    value={0}
-                          />
-                          <span
-                                                    className="project-dialog-property__right-text"
-                          >
-                                                    Use Already Created Online Extension
-                          </span>
-</label>,
-                      ],
-                      "className": "project-dialog-property",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "Choose Extension",
-                          "className": "project-dialog-property__name",
-                        },
-                        "ref": null,
-                        "rendered": "Choose Extension",
-                        "type": "div",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              checked={true}
-                              className="project-dialog-property__left-input"
-                              name="isLocal"
-                              onChange={[Function]}
-                              type="radio"
-                              value={1}
-/>,
-                            <span
-                              className="project-dialog-property__right-text"
->
-                              Create Local Extension
-</span>,
-                          ],
-                          "className": "project-dialog-property__value",
-                        },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "checked": true,
-                              "className": "project-dialog-property__left-input",
-                              "name": "isLocal",
-                              "onChange": [Function],
-                              "type": "radio",
-                              "value": 1,
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": "Create Local Extension",
-                              "className": "project-dialog-property__right-text",
-                            },
-                            "ref": null,
-                            "rendered": "Create Local Extension",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              checked={false}
-                              className="project-dialog-property__left-input"
-                              name="isLocal"
-                              onChange={[Function]}
-                              type="radio"
-                              value={0}
-/>,
-                            <span
-                              className="project-dialog-property__right-text"
->
-                              Use Already Created Online Extension
-</span>,
-                          ],
-                          "className": "project-dialog-property__value",
-                        },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "checked": false,
-                              "className": "project-dialog-property__left-input",
-                              "name": "isLocal",
-                              "onChange": [Function],
-                              "type": "radio",
-                              "value": 0,
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": "Use Already Created Online Extension",
-                              "className": "project-dialog-property__right-text",
-                            },
-                            "ref": null,
-                            "rendered": "Use Already Created Online Extension",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                    ],
-                    "type": "div",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <div
-                          className="project-dialog-property__name"
->
-                          Extension Types
-</div>,
-                        <label
-                          className="project-dialog-property__value"
->
-                          <input
-                                                    checked={false}
-                                                    className="project-dialog-property__left-input"
-                                                    name="extensionTypes"
-                                                    onChange={[Function]}
-                                                    type="checkbox"
-                                                    value={4}
-                          />
-                          <span
-                                                    className="project-dialog-property__right-text"
-                          >
-                                                    Video Overlay
-                          </span>
-</label>,
-                        <label
-                          className="project-dialog-property__value"
->
-                          <input
-                                                    checked={true}
-                                                    className="project-dialog-property__left-input"
-                                                    name="extensionTypes"
-                                                    onChange={[Function]}
-                                                    type="checkbox"
-                                                    value={1}
-                          />
-                          <span
-                                                    className="project-dialog-property__right-text"
-                          >
-                                                    Panel
-                          </span>
-</label>,
-                        <label
-                          className="project-dialog-property__value"
->
-                          <input
-                                                    checked={false}
-                                                    className="project-dialog-property__left-input"
-                                                    name="extensionTypes"
-                                                    onChange={[Function]}
-                                                    type="checkbox"
-                                                    value={2}
-                          />
-                          <span
-                                                    className="project-dialog-property__right-text"
-                          >
-                                                    Component
-                          </span>
-</label>,
-                        <label
-                          className="project-dialog-property__value"
->
-                          <input
-                                                    checked={false}
-                                                    className="project-dialog-property__left-input"
-                                                    name="extensionTypes"
-                                                    onChange={[Function]}
-                                                    type="checkbox"
-                                                    value={8}
-                          />
-                          <span
-                                                    className="project-dialog-property__right-text"
-                          >
-                                                    Mobile
-                          </span>
-</label>,
-                      ],
-                      "className": "project-dialog-property",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "Extension Types",
-                          "className": "project-dialog-property__name",
-                        },
-                        "ref": null,
-                        "rendered": "Extension Types",
-                        "type": "div",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              checked={false}
-                              className="project-dialog-property__left-input"
-                              name="extensionTypes"
-                              onChange={[Function]}
-                              type="checkbox"
-                              value={4}
-/>,
-                            <span
-                              className="project-dialog-property__right-text"
->
-                              Video Overlay
-</span>,
-                          ],
-                          "className": "project-dialog-property__value",
-                        },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "checked": false,
-                              "className": "project-dialog-property__left-input",
-                              "name": "extensionTypes",
-                              "onChange": [Function],
-                              "type": "checkbox",
-                              "value": 4,
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": "Video Overlay",
-                              "className": "project-dialog-property__right-text",
-                            },
-                            "ref": null,
-                            "rendered": "Video Overlay",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              checked={true}
-                              className="project-dialog-property__left-input"
-                              name="extensionTypes"
-                              onChange={[Function]}
-                              type="checkbox"
-                              value={1}
-/>,
-                            <span
-                              className="project-dialog-property__right-text"
->
-                              Panel
-</span>,
-                          ],
-                          "className": "project-dialog-property__value",
-                        },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "checked": true,
-                              "className": "project-dialog-property__left-input",
-                              "name": "extensionTypes",
-                              "onChange": [Function],
-                              "type": "checkbox",
-                              "value": 1,
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": "Panel",
-                              "className": "project-dialog-property__right-text",
-                            },
-                            "ref": null,
-                            "rendered": "Panel",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              checked={false}
-                              className="project-dialog-property__left-input"
-                              name="extensionTypes"
-                              onChange={[Function]}
-                              type="checkbox"
-                              value={2}
-/>,
-                            <span
-                              className="project-dialog-property__right-text"
->
-                              Component
-</span>,
-                          ],
-                          "className": "project-dialog-property__value",
-                        },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "checked": false,
-                              "className": "project-dialog-property__left-input",
-                              "name": "extensionTypes",
-                              "onChange": [Function],
-                              "type": "checkbox",
-                              "value": 2,
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": "Component",
-                              "className": "project-dialog-property__right-text",
-                            },
-                            "ref": null,
-                            "rendered": "Component",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              checked={false}
-                              className="project-dialog-property__left-input"
-                              name="extensionTypes"
-                              onChange={[Function]}
-                              type="checkbox"
-                              value={8}
-/>,
-                            <span
-                              className="project-dialog-property__right-text"
->
-                              Mobile
-</span>,
-                          ],
-                          "className": "project-dialog-property__value",
-                        },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "checked": false,
-                              "className": "project-dialog-property__left-input",
-                              "name": "extensionTypes",
-                              "onChange": [Function],
-                              "type": "checkbox",
-                              "value": 8,
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": "Mobile",
-                              "className": "project-dialog-property__right-text",
-                            },
-                            "ref": null,
-                            "rendered": "Mobile",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                    ],
-                    "type": "div",
-                  },
                   false,
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <label
+                          className="project-dialog-property__value project-dialog-property__value--grid"
+>
+                          <span
+                                                    className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                          >
+                                                    Client ID
+                          </span>
+                          <input
+                                                    className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                    name="clientId"
+                                                    onChange={[Function]}
+                                                    type="text"
+                                                    value="test"
+                          />
+</label>,
+                        <label
+                          className="project-dialog-property__value project-dialog-property__value--grid"
+>
+                          <span
+                                                    className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                          >
+                                                    Secret
+                          </span>
+                          <input
+                                                    className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                    name="secret"
+                                                    onChange={[Function]}
+                                                    type="text"
+                                                    value="test"
+                          />
+</label>,
+                        <label
+                          className="project-dialog-property__value project-dialog-property__value--grid"
+>
+                          <span
+                                                    className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                          >
+                                                    Version
+                          </span>
+                          <input
+                                                    className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                    name="version"
+                                                    onChange={[Function]}
+                                                    type="text"
+                                                    value="test"
+                          />
+</label>,
+                        <button
+                          className="project-dialog-property__button"
+                          onClick={[Function]}
+>
+                          Fetch
+</button>,
+                        <textarea
+                          className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                          disabled={true}
+                          value="{}"
+/>,
+                      ],
+                      "className": "project-dialog-property",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+>
+                              Client ID
+</span>,
+                            <input
+                              className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                              name="clientId"
+                              onChange={[Function]}
+                              type="text"
+                              value="test"
+/>,
+                          ],
+                          "className": "project-dialog-property__value project-dialog-property__value--grid",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Client ID",
+                              "className": "project-dialog-property__left-text project-dialog-property__left-text--grid",
+                            },
+                            "ref": null,
+                            "rendered": "Client ID",
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "project-dialog-property__right-input project-dialog-property__right-input--grid",
+                              "name": "clientId",
+                              "onChange": [Function],
+                              "type": "text",
+                              "value": "test",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "label",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+>
+                              Secret
+</span>,
+                            <input
+                              className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                              name="secret"
+                              onChange={[Function]}
+                              type="text"
+                              value="test"
+/>,
+                          ],
+                          "className": "project-dialog-property__value project-dialog-property__value--grid",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Secret",
+                              "className": "project-dialog-property__left-text project-dialog-property__left-text--grid",
+                            },
+                            "ref": null,
+                            "rendered": "Secret",
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "project-dialog-property__right-input project-dialog-property__right-input--grid",
+                              "name": "secret",
+                              "onChange": [Function],
+                              "type": "text",
+                              "value": "test",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "label",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+>
+                              Version
+</span>,
+                            <input
+                              className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                              name="version"
+                              onChange={[Function]}
+                              type="text"
+                              value="test"
+/>,
+                          ],
+                          "className": "project-dialog-property__value project-dialog-property__value--grid",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Version",
+                              "className": "project-dialog-property__left-text project-dialog-property__left-text--grid",
+                            },
+                            "ref": null,
+                            "rendered": "Version",
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "project-dialog-property__right-input project-dialog-property__right-input--grid",
+                              "name": "version",
+                              "onChange": [Function],
+                              "type": "text",
+                              "value": "test",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "label",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Fetch",
+                          "className": "project-dialog-property__button",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": "Fetch",
+                        "type": "button",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "project-dialog-property__textarea project-dialog-property__textarea--error",
+                          "disabled": true,
+                          "value": "{}",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "textarea",
+                      },
+                    ],
+                    "type": "div",
+                  },
                   Object {
                     "instance": null,
                     "key": undefined,
@@ -2294,8 +1830,8 @@ ShallowWrapper {
                                                             Extension Project Name
                                                 </div>
                                                 <input
-                                                            className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                            disabled={false}
+                                                            className="project-dialog-property__input project-dialog-property__input--half"
+                                                            disabled={true}
                                                             name="localName"
                                                             onChange={[Function]}
                                                             title="Enter a name for your project.  This is set for you for online extensions."
@@ -2306,122 +1842,65 @@ ShallowWrapper {
                                     <div
                                                 className="project-dialog-property"
                                     >
-                                                <div
-                                                            className="project-dialog-property__name"
-                                                >
-                                                            Choose Extension
-                                                </div>
                                                 <label
-                                                            className="project-dialog-property__value"
+                                                            className="project-dialog-property__value project-dialog-property__value--grid"
                                                 >
-                                                            <input
-                                                                        checked={true}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="isLocal"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value={1}
-                                                            />
                                                             <span
-                                                                        className="project-dialog-property__right-text"
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                             >
-                                                                        Create Local Extension
+                                                                        Client ID
                                                             </span>
+                                                            <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="clientId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                            />
                                                 </label>
                                                 <label
-                                                            className="project-dialog-property__value"
+                                                            className="project-dialog-property__value project-dialog-property__value--grid"
                                                 >
-                                                            <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="isLocal"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value={0}
-                                                            />
                                                             <span
-                                                                        className="project-dialog-property__right-text"
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                             >
-                                                                        Use Already Created Online Extension
+                                                                        Secret
                                                             </span>
-                                                </label>
-                                    </div>
-                                    <div
-                                                className="project-dialog-property"
-                                    >
-                                                <div
-                                                            className="project-dialog-property__name"
-                                                >
-                                                            Extension Types
-                                                </div>
-                                                <label
-                                                            className="project-dialog-property__value"
-                                                >
                                                             <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="secret"
                                                                         onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={4}
+                                                                        type="text"
+                                                                        value="test"
                                                             />
-                                                            <span
-                                                                        className="project-dialog-property__right-text"
-                                                            >
-                                                                        Video Overlay
-                                                            </span>
                                                 </label>
                                                 <label
-                                                            className="project-dialog-property__value"
+                                                            className="project-dialog-property__value project-dialog-property__value--grid"
                                                 >
-                                                            <input
-                                                                        checked={true}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={1}
-                                                            />
                                                             <span
-                                                                        className="project-dialog-property__right-text"
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                             >
-                                                                        Panel
+                                                                        Version
                                                             </span>
+                                                            <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="version"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                            />
                                                 </label>
-                                                <label
-                                                            className="project-dialog-property__value"
+                                                <button
+                                                            className="project-dialog-property__button"
+                                                            onClick={[Function]}
                                                 >
-                                                            <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={2}
-                                                            />
-                                                            <span
-                                                                        className="project-dialog-property__right-text"
-                                                            >
-                                                                        Component
-                                                            </span>
-                                                </label>
-                                                <label
-                                                            className="project-dialog-property__value"
-                                                >
-                                                            <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={8}
-                                                            />
-                                                            <span
-                                                                        className="project-dialog-property__right-text"
-                                                            >
-                                                                        Mobile
-                                                            </span>
-                                                </label>
+                                                            Fetch
+                                                </button>
+                                                <textarea
+                                                            className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                            disabled={true}
+                                                            value="{}"
+                                                />
                                     </div>
                                     <label
                                                 className="project-dialog-property"
@@ -2606,8 +2085,8 @@ ShallowWrapper {
                                                                 Extension Project Name
                                                 </div>
                                                 <input
-                                                                className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                                disabled={false}
+                                                                className="project-dialog-property__input project-dialog-property__input--half"
+                                                                disabled={true}
                                                                 name="localName"
                                                                 onChange={[Function]}
                                                                 title="Enter a name for your project.  This is set for you for online extensions."
@@ -2618,122 +2097,65 @@ ShallowWrapper {
                                 <div
                                                 className="project-dialog-property"
                                 >
-                                                <div
-                                                                className="project-dialog-property__name"
-                                                >
-                                                                Choose Extension
-                                                </div>
                                                 <label
-                                                                className="project-dialog-property__value"
+                                                                className="project-dialog-property__value project-dialog-property__value--grid"
                                                 >
-                                                                <input
-                                                                                checked={true}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="isLocal"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value={1}
-                                                                />
                                                                 <span
-                                                                                className="project-dialog-property__right-text"
+                                                                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                                 >
-                                                                                Create Local Extension
+                                                                                Client ID
                                                                 </span>
+                                                                <input
+                                                                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                                name="clientId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value="test"
+                                                                />
                                                 </label>
                                                 <label
-                                                                className="project-dialog-property__value"
+                                                                className="project-dialog-property__value project-dialog-property__value--grid"
                                                 >
-                                                                <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="isLocal"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value={0}
-                                                                />
                                                                 <span
-                                                                                className="project-dialog-property__right-text"
+                                                                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                                 >
-                                                                                Use Already Created Online Extension
+                                                                                Secret
                                                                 </span>
-                                                </label>
-                                </div>
-                                <div
-                                                className="project-dialog-property"
-                                >
-                                                <div
-                                                                className="project-dialog-property__name"
-                                                >
-                                                                Extension Types
-                                                </div>
-                                                <label
-                                                                className="project-dialog-property__value"
-                                                >
                                                                 <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
+                                                                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                                name="secret"
                                                                                 onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={4}
+                                                                                type="text"
+                                                                                value="test"
                                                                 />
-                                                                <span
-                                                                                className="project-dialog-property__right-text"
-                                                                >
-                                                                                Video Overlay
-                                                                </span>
                                                 </label>
                                                 <label
-                                                                className="project-dialog-property__value"
+                                                                className="project-dialog-property__value project-dialog-property__value--grid"
                                                 >
-                                                                <input
-                                                                                checked={true}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
-                                                                                onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={1}
-                                                                />
                                                                 <span
-                                                                                className="project-dialog-property__right-text"
+                                                                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                                 >
-                                                                                Panel
+                                                                                Version
                                                                 </span>
+                                                                <input
+                                                                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                                name="version"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value="test"
+                                                                />
                                                 </label>
-                                                <label
-                                                                className="project-dialog-property__value"
+                                                <button
+                                                                className="project-dialog-property__button"
+                                                                onClick={[Function]}
                                                 >
-                                                                <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
-                                                                                onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={2}
-                                                                />
-                                                                <span
-                                                                                className="project-dialog-property__right-text"
-                                                                >
-                                                                                Component
-                                                                </span>
-                                                </label>
-                                                <label
-                                                                className="project-dialog-property__value"
-                                                >
-                                                                <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
-                                                                                onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={8}
-                                                                />
-                                                                <span
-                                                                                className="project-dialog-property__right-text"
-                                                                >
-                                                                                Mobile
-                                                                </span>
-                                                </label>
+                                                                Fetch
+                                                </button>
+                                                <textarea
+                                                                className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                                disabled={true}
+                                                                value="{}"
+                                                />
                                 </div>
                                 <label
                                                 className="project-dialog-property"
@@ -2960,8 +2382,8 @@ ShallowWrapper {
                                                             Extension Project Name
                                         </div>
                                         <input
-                                                            className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                            disabled={false}
+                                                            className="project-dialog-property__input project-dialog-property__input--half"
+                                                            disabled={true}
                                                             name="localName"
                                                             onChange={[Function]}
                                                             title="Enter a name for your project.  This is set for you for online extensions."
@@ -2972,122 +2394,65 @@ ShallowWrapper {
                     <div
                                         className="project-dialog-property"
                     >
-                                        <div
-                                                            className="project-dialog-property__name"
-                                        >
-                                                            Choose Extension
-                                        </div>
                                         <label
-                                                            className="project-dialog-property__value"
+                                                            className="project-dialog-property__value project-dialog-property__value--grid"
                                         >
-                                                            <input
-                                                                                checked={true}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="isLocal"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value={1}
-                                                            />
                                                             <span
-                                                                                className="project-dialog-property__right-text"
+                                                                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                             >
-                                                                                Create Local Extension
+                                                                                Client ID
                                                             </span>
+                                                            <input
+                                                                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                                name="clientId"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value="test"
+                                                            />
                                         </label>
                                         <label
-                                                            className="project-dialog-property__value"
+                                                            className="project-dialog-property__value project-dialog-property__value--grid"
                                         >
-                                                            <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="isLocal"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value={0}
-                                                            />
                                                             <span
-                                                                                className="project-dialog-property__right-text"
+                                                                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                             >
-                                                                                Use Already Created Online Extension
+                                                                                Secret
                                                             </span>
-                                        </label>
-                    </div>
-                    <div
-                                        className="project-dialog-property"
-                    >
-                                        <div
-                                                            className="project-dialog-property__name"
-                                        >
-                                                            Extension Types
-                                        </div>
-                                        <label
-                                                            className="project-dialog-property__value"
-                                        >
                                                             <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
+                                                                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                                name="secret"
                                                                                 onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={4}
+                                                                                type="text"
+                                                                                value="test"
                                                             />
-                                                            <span
-                                                                                className="project-dialog-property__right-text"
-                                                            >
-                                                                                Video Overlay
-                                                            </span>
                                         </label>
                                         <label
-                                                            className="project-dialog-property__value"
+                                                            className="project-dialog-property__value project-dialog-property__value--grid"
                                         >
-                                                            <input
-                                                                                checked={true}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
-                                                                                onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={1}
-                                                            />
                                                             <span
-                                                                                className="project-dialog-property__right-text"
+                                                                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
                                                             >
-                                                                                Panel
+                                                                                Version
                                                             </span>
+                                                            <input
+                                                                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                                name="version"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value="test"
+                                                            />
                                         </label>
-                                        <label
-                                                            className="project-dialog-property__value"
+                                        <button
+                                                            className="project-dialog-property__button"
+                                                            onClick={[Function]}
                                         >
-                                                            <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
-                                                                                onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={2}
-                                                            />
-                                                            <span
-                                                                                className="project-dialog-property__right-text"
-                                                            >
-                                                                                Component
-                                                            </span>
-                                        </label>
-                                        <label
-                                                            className="project-dialog-property__value"
-                                        >
-                                                            <input
-                                                                                checked={false}
-                                                                                className="project-dialog-property__left-input"
-                                                                                name="extensionTypes"
-                                                                                onChange={[Function]}
-                                                                                type="checkbox"
-                                                                                value={8}
-                                                            />
-                                                            <span
-                                                                                className="project-dialog-property__right-text"
-                                                            >
-                                                                                Mobile
-                                                            </span>
-                                        </label>
+                                                            Fetch
+                                        </button>
+                                        <textarea
+                                                            className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                            disabled={true}
+                                                            value="{}"
+                                        />
                     </div>
                     <label
                                         className="project-dialog-property"
@@ -3212,8 +2577,8 @@ ShallowWrapper {
                                                 Extension Project Name
                         </div>
                         <input
-                                                className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                                                disabled={false}
+                                                className="project-dialog-property__input project-dialog-property__input--half"
+                                                disabled={true}
                                                 name="localName"
                                                 onChange={[Function]}
                                                 title="Enter a name for your project.  This is set for you for online extensions."
@@ -3221,127 +2586,70 @@ ShallowWrapper {
                                                 value=""
                         />
 </label>,
-                      <div
-                        className="project-dialog-property"
->
-                        <div
-                                                className="project-dialog-property__name"
-                        >
-                                                Choose Extension
-                        </div>
-                        <label
-                                                className="project-dialog-property__value"
-                        >
-                                                <input
-                                                                        checked={true}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="isLocal"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value={1}
-                                                />
-                                                <span
-                                                                        className="project-dialog-property__right-text"
-                                                >
-                                                                        Create Local Extension
-                                                </span>
-                        </label>
-                        <label
-                                                className="project-dialog-property__value"
-                        >
-                                                <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="isLocal"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value={0}
-                                                />
-                                                <span
-                                                                        className="project-dialog-property__right-text"
-                                                >
-                                                                        Use Already Created Online Extension
-                                                </span>
-                        </label>
-</div>,
-                      <div
-                        className="project-dialog-property"
->
-                        <div
-                                                className="project-dialog-property__name"
-                        >
-                                                Extension Types
-                        </div>
-                        <label
-                                                className="project-dialog-property__value"
-                        >
-                                                <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={4}
-                                                />
-                                                <span
-                                                                        className="project-dialog-property__right-text"
-                                                >
-                                                                        Video Overlay
-                                                </span>
-                        </label>
-                        <label
-                                                className="project-dialog-property__value"
-                        >
-                                                <input
-                                                                        checked={true}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={1}
-                                                />
-                                                <span
-                                                                        className="project-dialog-property__right-text"
-                                                >
-                                                                        Panel
-                                                </span>
-                        </label>
-                        <label
-                                                className="project-dialog-property__value"
-                        >
-                                                <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={2}
-                                                />
-                                                <span
-                                                                        className="project-dialog-property__right-text"
-                                                >
-                                                                        Component
-                                                </span>
-                        </label>
-                        <label
-                                                className="project-dialog-property__value"
-                        >
-                                                <input
-                                                                        checked={false}
-                                                                        className="project-dialog-property__left-input"
-                                                                        name="extensionTypes"
-                                                                        onChange={[Function]}
-                                                                        type="checkbox"
-                                                                        value={8}
-                                                />
-                                                <span
-                                                                        className="project-dialog-property__right-text"
-                                                >
-                                                                        Mobile
-                                                </span>
-                        </label>
-</div>,
                       false,
+                      <div
+                        className="project-dialog-property"
+>
+                        <label
+                                                className="project-dialog-property__value project-dialog-property__value--grid"
+                        >
+                                                <span
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                                                >
+                                                                        Client ID
+                                                </span>
+                                                <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="clientId"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                />
+                        </label>
+                        <label
+                                                className="project-dialog-property__value project-dialog-property__value--grid"
+                        >
+                                                <span
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                                                >
+                                                                        Secret
+                                                </span>
+                                                <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="secret"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                />
+                        </label>
+                        <label
+                                                className="project-dialog-property__value project-dialog-property__value--grid"
+                        >
+                                                <span
+                                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                                                >
+                                                                        Version
+                                                </span>
+                                                <input
+                                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                                        name="version"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value="test"
+                                                />
+                        </label>
+                        <button
+                                                className="project-dialog-property__button"
+                                                onClick={[Function]}
+                        >
+                                                Fetch
+                        </button>
+                        <textarea
+                                                className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                                                disabled={true}
+                                                value="{}"
+                        />
+</div>,
                       <label
                         className="project-dialog-property"
                         title="This is the folder we will create to contain your project. You must have already created its parent folder."
@@ -3419,8 +2727,8 @@ ShallowWrapper {
                             Extension Project Name
 </div>,
                           <input
-                            className="project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error"
-                            disabled={false}
+                            className="project-dialog-property__input project-dialog-property__input--half"
+                            disabled={true}
                             name="localName"
                             onChange={[Function]}
                             title="Enter a name for your project.  This is set for you for online extensions."
@@ -3449,8 +2757,8 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "host",
                           "props": Object {
-                            "className": "project-dialog-property__input project-dialog-property__input--half project-dialog-property__input--error",
-                            "disabled": false,
+                            "className": "project-dialog-property__input project-dialog-property__input--half",
+                            "disabled": true,
                             "name": "localName",
                             "onChange": [Function],
                             "title": "Enter a name for your project.  This is set for you for online extensions.",
@@ -3464,501 +2772,265 @@ ShallowWrapper {
                       ],
                       "type": "label",
                     },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <div
-                            className="project-dialog-property__name"
->
-                            Choose Extension
-</div>,
-                          <label
-                            className="project-dialog-property__value"
->
-                            <input
-                                                        checked={true}
-                                                        className="project-dialog-property__left-input"
-                                                        name="isLocal"
-                                                        onChange={[Function]}
-                                                        type="radio"
-                                                        value={1}
-                            />
-                            <span
-                                                        className="project-dialog-property__right-text"
-                            >
-                                                        Create Local Extension
-                            </span>
-</label>,
-                          <label
-                            className="project-dialog-property__value"
->
-                            <input
-                                                        checked={false}
-                                                        className="project-dialog-property__left-input"
-                                                        name="isLocal"
-                                                        onChange={[Function]}
-                                                        type="radio"
-                                                        value={0}
-                            />
-                            <span
-                                                        className="project-dialog-property__right-text"
-                            >
-                                                        Use Already Created Online Extension
-                            </span>
-</label>,
-                        ],
-                        "className": "project-dialog-property",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": "Choose Extension",
-                            "className": "project-dialog-property__name",
-                          },
-                          "ref": null,
-                          "rendered": "Choose Extension",
-                          "type": "div",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <input
-                                checked={true}
-                                className="project-dialog-property__left-input"
-                                name="isLocal"
-                                onChange={[Function]}
-                                type="radio"
-                                value={1}
-/>,
-                              <span
-                                className="project-dialog-property__right-text"
->
-                                Create Local Extension
-</span>,
-                            ],
-                            "className": "project-dialog-property__value",
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "checked": true,
-                                "className": "project-dialog-property__left-input",
-                                "name": "isLocal",
-                                "onChange": [Function],
-                                "type": "radio",
-                                "value": 1,
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "input",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Create Local Extension",
-                                "className": "project-dialog-property__right-text",
-                              },
-                              "ref": null,
-                              "rendered": "Create Local Extension",
-                              "type": "span",
-                            },
-                          ],
-                          "type": "label",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <input
-                                checked={false}
-                                className="project-dialog-property__left-input"
-                                name="isLocal"
-                                onChange={[Function]}
-                                type="radio"
-                                value={0}
-/>,
-                              <span
-                                className="project-dialog-property__right-text"
->
-                                Use Already Created Online Extension
-</span>,
-                            ],
-                            "className": "project-dialog-property__value",
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "checked": false,
-                                "className": "project-dialog-property__left-input",
-                                "name": "isLocal",
-                                "onChange": [Function],
-                                "type": "radio",
-                                "value": 0,
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "input",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Use Already Created Online Extension",
-                                "className": "project-dialog-property__right-text",
-                              },
-                              "ref": null,
-                              "rendered": "Use Already Created Online Extension",
-                              "type": "span",
-                            },
-                          ],
-                          "type": "label",
-                        },
-                      ],
-                      "type": "div",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <div
-                            className="project-dialog-property__name"
->
-                            Extension Types
-</div>,
-                          <label
-                            className="project-dialog-property__value"
->
-                            <input
-                                                        checked={false}
-                                                        className="project-dialog-property__left-input"
-                                                        name="extensionTypes"
-                                                        onChange={[Function]}
-                                                        type="checkbox"
-                                                        value={4}
-                            />
-                            <span
-                                                        className="project-dialog-property__right-text"
-                            >
-                                                        Video Overlay
-                            </span>
-</label>,
-                          <label
-                            className="project-dialog-property__value"
->
-                            <input
-                                                        checked={true}
-                                                        className="project-dialog-property__left-input"
-                                                        name="extensionTypes"
-                                                        onChange={[Function]}
-                                                        type="checkbox"
-                                                        value={1}
-                            />
-                            <span
-                                                        className="project-dialog-property__right-text"
-                            >
-                                                        Panel
-                            </span>
-</label>,
-                          <label
-                            className="project-dialog-property__value"
->
-                            <input
-                                                        checked={false}
-                                                        className="project-dialog-property__left-input"
-                                                        name="extensionTypes"
-                                                        onChange={[Function]}
-                                                        type="checkbox"
-                                                        value={2}
-                            />
-                            <span
-                                                        className="project-dialog-property__right-text"
-                            >
-                                                        Component
-                            </span>
-</label>,
-                          <label
-                            className="project-dialog-property__value"
->
-                            <input
-                                                        checked={false}
-                                                        className="project-dialog-property__left-input"
-                                                        name="extensionTypes"
-                                                        onChange={[Function]}
-                                                        type="checkbox"
-                                                        value={8}
-                            />
-                            <span
-                                                        className="project-dialog-property__right-text"
-                            >
-                                                        Mobile
-                            </span>
-</label>,
-                        ],
-                        "className": "project-dialog-property",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": "Extension Types",
-                            "className": "project-dialog-property__name",
-                          },
-                          "ref": null,
-                          "rendered": "Extension Types",
-                          "type": "div",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <input
-                                checked={false}
-                                className="project-dialog-property__left-input"
-                                name="extensionTypes"
-                                onChange={[Function]}
-                                type="checkbox"
-                                value={4}
-/>,
-                              <span
-                                className="project-dialog-property__right-text"
->
-                                Video Overlay
-</span>,
-                            ],
-                            "className": "project-dialog-property__value",
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "checked": false,
-                                "className": "project-dialog-property__left-input",
-                                "name": "extensionTypes",
-                                "onChange": [Function],
-                                "type": "checkbox",
-                                "value": 4,
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "input",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Video Overlay",
-                                "className": "project-dialog-property__right-text",
-                              },
-                              "ref": null,
-                              "rendered": "Video Overlay",
-                              "type": "span",
-                            },
-                          ],
-                          "type": "label",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <input
-                                checked={true}
-                                className="project-dialog-property__left-input"
-                                name="extensionTypes"
-                                onChange={[Function]}
-                                type="checkbox"
-                                value={1}
-/>,
-                              <span
-                                className="project-dialog-property__right-text"
->
-                                Panel
-</span>,
-                            ],
-                            "className": "project-dialog-property__value",
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "checked": true,
-                                "className": "project-dialog-property__left-input",
-                                "name": "extensionTypes",
-                                "onChange": [Function],
-                                "type": "checkbox",
-                                "value": 1,
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "input",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Panel",
-                                "className": "project-dialog-property__right-text",
-                              },
-                              "ref": null,
-                              "rendered": "Panel",
-                              "type": "span",
-                            },
-                          ],
-                          "type": "label",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <input
-                                checked={false}
-                                className="project-dialog-property__left-input"
-                                name="extensionTypes"
-                                onChange={[Function]}
-                                type="checkbox"
-                                value={2}
-/>,
-                              <span
-                                className="project-dialog-property__right-text"
->
-                                Component
-</span>,
-                            ],
-                            "className": "project-dialog-property__value",
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "checked": false,
-                                "className": "project-dialog-property__left-input",
-                                "name": "extensionTypes",
-                                "onChange": [Function],
-                                "type": "checkbox",
-                                "value": 2,
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "input",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Component",
-                                "className": "project-dialog-property__right-text",
-                              },
-                              "ref": null,
-                              "rendered": "Component",
-                              "type": "span",
-                            },
-                          ],
-                          "type": "label",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <input
-                                checked={false}
-                                className="project-dialog-property__left-input"
-                                name="extensionTypes"
-                                onChange={[Function]}
-                                type="checkbox"
-                                value={8}
-/>,
-                              <span
-                                className="project-dialog-property__right-text"
->
-                                Mobile
-</span>,
-                            ],
-                            "className": "project-dialog-property__value",
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "checked": false,
-                                "className": "project-dialog-property__left-input",
-                                "name": "extensionTypes",
-                                "onChange": [Function],
-                                "type": "checkbox",
-                                "value": 8,
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "input",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Mobile",
-                                "className": "project-dialog-property__right-text",
-                              },
-                              "ref": null,
-                              "rendered": "Mobile",
-                              "type": "span",
-                            },
-                          ],
-                          "type": "label",
-                        },
-                      ],
-                      "type": "div",
-                    },
                     false,
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <label
+                            className="project-dialog-property__value project-dialog-property__value--grid"
+>
+                            <span
+                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                            >
+                                                        Client ID
+                            </span>
+                            <input
+                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                        name="clientId"
+                                                        onChange={[Function]}
+                                                        type="text"
+                                                        value="test"
+                            />
+</label>,
+                          <label
+                            className="project-dialog-property__value project-dialog-property__value--grid"
+>
+                            <span
+                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                            >
+                                                        Secret
+                            </span>
+                            <input
+                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                        name="secret"
+                                                        onChange={[Function]}
+                                                        type="text"
+                                                        value="test"
+                            />
+</label>,
+                          <label
+                            className="project-dialog-property__value project-dialog-property__value--grid"
+>
+                            <span
+                                                        className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+                            >
+                                                        Version
+                            </span>
+                            <input
+                                                        className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                                        name="version"
+                                                        onChange={[Function]}
+                                                        type="text"
+                                                        value="test"
+                            />
+</label>,
+                          <button
+                            className="project-dialog-property__button"
+                            onClick={[Function]}
+>
+                            Fetch
+</button>,
+                          <textarea
+                            className="project-dialog-property__textarea project-dialog-property__textarea--error"
+                            disabled={true}
+                            value="{}"
+/>,
+                        ],
+                        "className": "project-dialog-property",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <span
+                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+>
+                                Client ID
+</span>,
+                              <input
+                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                name="clientId"
+                                onChange={[Function]}
+                                type="text"
+                                value="test"
+/>,
+                            ],
+                            "className": "project-dialog-property__value project-dialog-property__value--grid",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Client ID",
+                                "className": "project-dialog-property__left-text project-dialog-property__left-text--grid",
+                              },
+                              "ref": null,
+                              "rendered": "Client ID",
+                              "type": "span",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "project-dialog-property__right-input project-dialog-property__right-input--grid",
+                                "name": "clientId",
+                                "onChange": [Function],
+                                "type": "text",
+                                "value": "test",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "input",
+                            },
+                          ],
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <span
+                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+>
+                                Secret
+</span>,
+                              <input
+                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                name="secret"
+                                onChange={[Function]}
+                                type="text"
+                                value="test"
+/>,
+                            ],
+                            "className": "project-dialog-property__value project-dialog-property__value--grid",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Secret",
+                                "className": "project-dialog-property__left-text project-dialog-property__left-text--grid",
+                              },
+                              "ref": null,
+                              "rendered": "Secret",
+                              "type": "span",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "project-dialog-property__right-input project-dialog-property__right-input--grid",
+                                "name": "secret",
+                                "onChange": [Function],
+                                "type": "text",
+                                "value": "test",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "input",
+                            },
+                          ],
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <span
+                                className="project-dialog-property__left-text project-dialog-property__left-text--grid"
+>
+                                Version
+</span>,
+                              <input
+                                className="project-dialog-property__right-input project-dialog-property__right-input--grid"
+                                name="version"
+                                onChange={[Function]}
+                                type="text"
+                                value="test"
+/>,
+                            ],
+                            "className": "project-dialog-property__value project-dialog-property__value--grid",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Version",
+                                "className": "project-dialog-property__left-text project-dialog-property__left-text--grid",
+                              },
+                              "ref": null,
+                              "rendered": "Version",
+                              "type": "span",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "project-dialog-property__right-input project-dialog-property__right-input--grid",
+                                "name": "version",
+                                "onChange": [Function],
+                                "type": "text",
+                                "value": "test",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "input",
+                            },
+                          ],
+                          "type": "label",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Fetch",
+                            "className": "project-dialog-property__button",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": "Fetch",
+                          "type": "button",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "project-dialog-property__textarea project-dialog-property__textarea--error",
+                            "disabled": true,
+                            "value": "{}",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "textarea",
+                        },
+                      ],
+                      "type": "div",
+                    },
                     Object {
                       "instance": null,
                       "key": undefined,

@@ -43,7 +43,7 @@ describe('<CreateProjectDialog />', () => {
 
   it('expects label-only content', () => {
     const { wrapper } = setupShallow();
-    expect(wrapper.find('.project-dialog__dialog').first().text().trim()).toBe('Create New Extension ProjectExtension Project NameChoose ExtensionCreate Local ExtensionUse Already Created Online ExtensionExtension TypesVideo OverlayPanelComponentMobileProject FolderAdd Code to ProjectNone (Only create project folder, if specified)Use Existing ExampleStart from an existing extension example from Twitch or the Developer CommunityTwitch Provided ExamplesCommunity ExamplesComing soon!  Reach out to developers@twitch.tv if you’d like to contribute.SaveCancel');
+    expect(wrapper.find('.project-dialog__dialog').first().text().trim()).toBe('Create New Extension ProjectExtension Project NameClient IDSecretVersionFetchProject FolderAdd Code to ProjectNone (Only create project folder, if specified)Use Existing ExampleStart from an existing extension example from Twitch or the Developer CommunityTwitch Provided ExamplesCommunity ExamplesComing soon!  Reach out to developers@twitch.tv if you’d like to contribute.SaveCancel');
   });
 
   it('fetches extension manifest', () => {
@@ -52,7 +52,6 @@ describe('<CreateProjectDialog />', () => {
     ['localName', 'projectFolderPath'].forEach((name: string) => {
       wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value } });
     })
-    wrapper.find('input[name="isLocal"]').last().simulate('change', { currentTarget: { name: 'isLocal', value: '0' } });
     wrapper.find('.project-dialog-property__button').simulate('click');
     expect(api.fetchExtensionManifest).toHaveBeenCalledTimes(1);
   });
@@ -106,9 +105,8 @@ describe('<CreateProjectDialog />', () => {
       return Promise.reject(new Error(errorMessage));
     });
     const { wrapper } = setupShallow();
-    ['localName', 'projectFolderPath'].forEach((name: string) => {
-      wrapper.find('input[name="' + name + '"]').simulate('change', { currentTarget: { name, value } });
-    })
+    wrapper.state().rigProject = { manifest: { id: value }, projectFolderPath: '', secret: value };
+    wrapper.find('input[name="projectFolderPath"]').simulate('change', { currentTarget: { name: 'projectFolderPath', value } });
     wrapper.find('input[value="none"]').simulate('change', { currentTarget: { name: 'codeGenerationOption', value: 'none' } });
     wrapper.find('.bottom-bar__save').simulate('click');
     await p;
