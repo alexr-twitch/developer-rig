@@ -19,6 +19,6 @@ describe('<DivOption />', () => {
     const { wrapper } = setupShallow({
       checked: true,
     });
-    expect(wrapper.find('.dialog-selected').length).toBe(1);
+    expect(wrapper.find('.div-option__text--selected').length).toBe(1);
   })
 });

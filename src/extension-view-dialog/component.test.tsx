@@ -1,4 +1,4 @@
-import { setupShallowTest } from '../tests/enzyme-util/shallow';
+import { setupMountTest } from '../tests/enzyme-util/mount';
 import { ExtensionViewDialog } from './component';
 import { DefaultExtensionType, ExtensionAnchors } from '../constants/extension-types'
 import { DefaultOverlaySize } from '../constants/overlay-sizes'
@@ -8,7 +8,7 @@ import { ExtensionViewType, ExtensionMode, ExtensionAnchor, ExtensionPlatform } 
 import { DivOption } from './div-option';
 
 describe('<ExtensionViewDialog />', () => {
-  const setupShallow = setupShallowTest(ExtensionViewDialog, () => ({
+  const setupMount = setupMountTest(ExtensionViewDialog, () => ({
     channelId: 'twitch',
     extensionViews: {
       panel: {
@@ -29,25 +29,25 @@ describe('<ExtensionViewDialog />', () => {
   }));
 
   it('when top nav close button is clicked closeHandler is called', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupMount();
     wrapper.find('.top-bar-container__escape').simulate('click');
     expect(wrapper.instance().props.closeHandler).toHaveBeenCalled();
   });
 
   it('when bottom bar close button is clicked closeHandler is called', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupMount();
     wrapper.find('.bottom-bar__cancel').simulate('click');
     expect(wrapper.instance().props.closeHandler).toHaveBeenCalled();
   });
 
   it('when save button is clicked saveHanler is called', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupMount();
     wrapper.find('.bottom-bar__save').simulate('click');
     expect(wrapper.instance().props.saveHandler).toHaveBeenCalled();
   });
 
   it('only shows the default views of no other views supported', () => {
-    const { wrapper } = setupShallow({
+    const { wrapper } = setupMount({
       extensionViews: {}
     })
 
@@ -57,10 +57,10 @@ describe('<ExtensionViewDialog />', () => {
   });
 
   it('renders correct identity options when logged in user type is selected', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupMount();
     const instance = wrapper.instance() as ExtensionViewDialog;
     wrapper.find('RadioOption').forEach((elem) => {
-      const diveInstance = elem.dive().instance() as RadioOption;
+      const diveInstance = elem.instance() as RadioOption;
       if (diveInstance.props.value === ViewerTypes.LoggedIn) {
         elem.simulate('click');
       }
@@ -78,12 +78,12 @@ describe('<ExtensionViewDialog />', () => {
   });
 
   it('renders opaque id input field correctly', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupMount();
     expect(wrapper.find('.opaque_id-input')).toHaveLength(1);
   });
 
   describe('for an extension that supports video overlays and panels', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupMount();
 
     it('renders correctly', () => {
       expect(wrapper.find(DivOption).length).toEqual(5);
@@ -115,7 +115,7 @@ describe('<ExtensionViewDialog />', () => {
   });
 
   describe('for an extension that only supports panels', () => {
-    const { wrapper } = setupShallow({
+    const { wrapper } = setupMount({
       extensionViews: {
         panel: {
           height: 300,
@@ -151,7 +151,7 @@ describe('<ExtensionViewDialog />', () => {
 
 
   describe('for an extension that only supports components', () => {
-    const { wrapper } = setupShallow({
+    const { wrapper } = setupMount({
       extensionViews: {
         component: {
           canLinkExternalContent: true,

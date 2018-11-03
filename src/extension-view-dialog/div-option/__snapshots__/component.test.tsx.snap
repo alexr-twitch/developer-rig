@@ -24,31 +24,32 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <label
-        className="extension-type-label"
+        className="div-option__label"
 >
         <input
+                className="div-option__input"
                 defaultChecked={false}
                 name="extensionViewType"
                 onChange={[Function]}
                 type="radio"
                 value="test"
         />
-        <div
-                className="extension-type-box"
+        <span
+                className="div-option__box"
         >
                 <img
                         alt="test"
-                        className="extension-type-box__img"
+                        className="div-option__image"
                         src="test.png"
                 />
-        </div>
-        <div
-                className="extension-type-text"
+        </span>
+        <span
+                className="div-option__text"
         >
                 test
-        </div>
+        </span>
 </label>,
-      "className": "extension-container__block",
+      "className": "div-option",
     },
     "ref": null,
     "rendered": Object {
@@ -58,28 +59,29 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <input
+            className="div-option__input"
             defaultChecked={false}
             name="extensionViewType"
             onChange={[Function]}
             type="radio"
             value="test"
 />,
-          <div
-            className="extension-type-box"
+          <span
+            className="div-option__box"
 >
             <img
                         alt="test"
-                        className="extension-type-box__img"
+                        className="div-option__image"
                         src="test.png"
             />
-</div>,
-          <div
-            className="extension-type-text"
+</span>,
+          <span
+            className="div-option__text"
 >
             test
-</div>,
+</span>,
         ],
-        "className": "extension-type-label",
+        "className": "div-option__label",
       },
       "ref": null,
       "rendered": Array [
@@ -88,6 +90,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "div-option__input",
             "defaultChecked": false,
             "name": "extensionViewType",
             "onChange": [Function],
@@ -105,10 +108,10 @@ ShallowWrapper {
           "props": Object {
             "children": <img
               alt="test"
-              className="extension-type-box__img"
+              className="div-option__image"
               src="test.png"
 />,
-            "className": "extension-type-box",
+            "className": "div-option__box",
           },
           "ref": null,
           "rendered": Object {
@@ -117,14 +120,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "test",
-              "className": "extension-type-box__img",
+              "className": "div-option__image",
               "src": "test.png",
             },
             "ref": null,
             "rendered": null,
             "type": "img",
           },
-          "type": "div",
+          "type": "span",
         },
         Object {
           "instance": null,
@@ -132,11 +135,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "test",
-            "className": "extension-type-text",
+            "className": "div-option__text",
           },
           "ref": null,
           "rendered": "test",
-          "type": "div",
+          "type": "span",
         },
       ],
       "type": "label",
@@ -150,31 +153,32 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <label
-          className="extension-type-label"
+          className="div-option__label"
 >
           <input
+                    className="div-option__input"
                     defaultChecked={false}
                     name="extensionViewType"
                     onChange={[Function]}
                     type="radio"
                     value="test"
           />
-          <div
-                    className="extension-type-box"
+          <span
+                    className="div-option__box"
           >
                     <img
                               alt="test"
-                              className="extension-type-box__img"
+                              className="div-option__image"
                               src="test.png"
                     />
-          </div>
-          <div
-                    className="extension-type-text"
+          </span>
+          <span
+                    className="div-option__text"
           >
                     test
-          </div>
+          </span>
 </label>,
-        "className": "extension-container__block",
+        "className": "div-option",
       },
       "ref": null,
       "rendered": Object {
@@ -184,28 +188,29 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <input
+              className="div-option__input"
               defaultChecked={false}
               name="extensionViewType"
               onChange={[Function]}
               type="radio"
               value="test"
 />,
-            <div
-              className="extension-type-box"
+            <span
+              className="div-option__box"
 >
               <img
                             alt="test"
-                            className="extension-type-box__img"
+                            className="div-option__image"
                             src="test.png"
               />
-</div>,
-            <div
-              className="extension-type-text"
+</span>,
+            <span
+              className="div-option__text"
 >
               test
-</div>,
+</span>,
           ],
-          "className": "extension-type-label",
+          "className": "div-option__label",
         },
         "ref": null,
         "rendered": Array [
@@ -214,6 +219,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "div-option__input",
               "defaultChecked": false,
               "name": "extensionViewType",
               "onChange": [Function],
@@ -231,10 +237,10 @@ ShallowWrapper {
             "props": Object {
               "children": <img
                 alt="test"
-                className="extension-type-box__img"
+                className="div-option__image"
                 src="test.png"
 />,
-              "className": "extension-type-box",
+              "className": "div-option__box",
             },
             "ref": null,
             "rendered": Object {
@@ -243,14 +249,14 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "test",
-                "className": "extension-type-box__img",
+                "className": "div-option__image",
                 "src": "test.png",
               },
               "ref": null,
               "rendered": null,
               "type": "img",
             },
-            "type": "div",
+            "type": "span",
           },
           Object {
             "instance": null,
@@ -258,11 +264,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "test",
-              "className": "extension-type-text",
+              "className": "div-option__text",
             },
             "ref": null,
             "rendered": "test",
-            "type": "div",
+            "type": "span",
           },
         ],
         "type": "label",
