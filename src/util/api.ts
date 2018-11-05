@@ -202,20 +202,16 @@ export async function saveProduct(clientId: string, token: string, product: Prod
 
 export async function fetchNewRelease() {
   const url = 'https://api.github.com/repos/twitchdev/developer-rig/releases/latest';
-  try {
-    const response = await onlineApi.get<any>(url, {
-      Accept: 'application/vnd.github.v3+json',
-    });
-    const tagName = response.tag_name;
-    const zipUrl = response.assets[0].browser_download_url;
-    if (tagName && zipUrl) {
-      return {
-        tagName,
-        zipUrl,
-      };
-    }
-  } catch (_e) {
-    throw new Error('Cannot get GitHub developer rig latest release');
+  const response = await onlineApi.get<any>(url, {
+    Accept: 'application/vnd.github.v3+json',
+  });
+  const tagName = response.tag_name;
+  const zipUrl = response.assets[0].browser_download_url;
+  if (tagName && zipUrl) {
+    return {
+      tagName,
+      zipUrl,
+    };
   }
 }
 

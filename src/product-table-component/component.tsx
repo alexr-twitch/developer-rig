@@ -56,7 +56,7 @@ export class ProductTableComponent extends React.Component<Props>{
 
   public handleSaveProductsClick = () => {
     const { clientId, token, saveProductsSuccess, saveProductsFailure } = this.props;
-    return Promise.all(this.props.products.filter(async (product, index) => {
+    this.props.products.forEach(async (product, index) => {
       if (product.dirty) {
         try {
           await saveProduct(clientId, token, product);
@@ -65,7 +65,7 @@ export class ProductTableComponent extends React.Component<Props>{
           saveProductsFailure(index, ex.message);
         }
       }
-    }));
+    });
   }
 
   public render() {

@@ -39,24 +39,23 @@ export class UserDropdownComponent extends React.Component<Props, State> {
     })
   }
 
-  public componentDidMount() {
+  public async componentDidMount() {
     if (process.env.GIT_RELEASE) {
-      fetchNewRelease()
-        .then((result) => {
-          if (result.tagName !== process.env.GIT_RELEASE) {
-            this.setState({
-              showingNewRelease: true,
-              releaseUrl: result.zipUrl,
-            });
-          }
-        })
-        .catch(e=>{
-          console.log(e)
+      try {
+        const result = await fetchNewRelease();
+        if (result && result.tagName !== process.env.GIT_RELEASE) {
           this.setState({
-            showingNewRelease:false,
-            releaseUrl:''
-          })
-        })
+            showingNewRelease: true,
+            releaseUrl: result.zipUrl,
+          });
+        }
+      } catch (ex) {
+        console.log('Cannot fetch Developer Rig latest release from GitHub:', ex.message);
+        this.setState({
+          showingNewRelease: false,
+          releaseUrl: '',
+        });
+      }
     }
   }
 
