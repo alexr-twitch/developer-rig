@@ -76,7 +76,7 @@
   },
   "scripts": {
     "create-manifest": "node scripts/create-manifest.js",
-    "start": "cross-env HOST=localhost.rig.twitch.tv HTTPS=true node scripts/start.js",
+    "start": "cross-env HOST=localhost node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "extension-init": "node ./scripts/extension-init.js",

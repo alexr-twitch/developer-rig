@@ -18,7 +18,6 @@ module.exports = function(app) {
       frontendCommand: '',
       backendCommand: `node ${join('extensions-hello-world', 'services', 'backend')} -c "{clientId}" -s "{secret}" -o "{ownerId}"`,
       npm: ['i'],
-      sslFolderName: 'conf',
       expectedDuration: 'a quarter of a minute',
     },
     {
@@ -29,7 +28,6 @@ module.exports = function(app) {
       frontendCommand: 'npm run host',
       backendCommand: '',
       npm: ['i'],
-      sslFolderName: 'conf',
       expectedDuration: 'a minute',
     },
     {
@@ -40,7 +38,6 @@ module.exports = function(app) {
       frontendCommand: 'npm run host',
       backendCommand: '',
       npm: ['i'],
-      sslFolderName: 'conf',
       expectedDuration: 'a minute',
     },
     {
@@ -51,15 +48,52 @@ module.exports = function(app) {
       frontendCommand: 'npm run host',
       backendCommand: '',
       npm: ['i'],
-      sslFolderName: 'conf',
       expectedDuration: 'a minute',
     },
   ];
 
-  app.get('/examples', (_, res) => {
+  app.get('/examples', (_req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.writeHead(200);
     res.end(JSON.stringify(examples));
+  });
+
+  app.get('/coordinator.js', (_req, res) => getResource('https://extension-files.twitch.tv/coordinator/7.22.2/extension-coordinator.umd.js', [
+    { name: 'Content-Type', value: 'application/javascript' },
+  ], [
+      { source: 'https://supervisor.ext-twitch.tv', target: 'http://localhost:3000' },
+      { source: 's?:\\/\\/([\\w-]+\\.)*twitch\\.(tv|tech)(:\\d+)?\\/.*$', target: '' },
+      { source: 's://client-event-reporter.twitch.tv', target: '://localhost:3000' },
+      { source: '/v1/index', target: '' },
+    ], res));
+
+  app.get('/supervisor.html', (_req, res) => getResource('https://supervisor.ext-twitch.tv/supervisor/v1/index.html', [
+    { name: 'Content-Security-Policy', value: "frame-ancestors 'self';" },
+    { name: 'Content-Type', value: 'text/html; charset=utf-8' },
+  ], [], res));
+
+  app.get('/supervisor.css', (_req, res) => getResource('https://supervisor.ext-twitch.tv/supervisor/v1/supervisor.css', [], [], res));
+
+  app.get('/supervisor.js', (_req, res) => getResource('https://supervisor.ext-twitch.tv/supervisor/v1/supervisor.js', [], [
+    { source: 's:\\/\\/(?:[^\\.]+\\.)*?twitch\\.(tv|tech)', target: '' },
+  ], res));
+
+  function getResource(url, headers, replacements, res) {
+    require('request')(url, (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        res.writeHead(error ? 500 : response.statusCode);
+      } else {
+        headers.forEach((header) => res.setHeader(header.name, header.value));
+        res.writeHead(200);
+        body = replacements.reduce((body, replacement) => body.replace(replacement.source, replacement.target), body);
+      }
+      res.end(body);
+    });
+  }
+
+  app.post('/v1/stats', (_req, res) => {
+    res.writeHead(204);
+    res.end();
   });
 
   app.post('/backend', async (req, res) => {
@@ -141,7 +175,7 @@ module.exports = function(app) {
         throw new Error(`Invalid project folder "${projectFolderPath}"; it must be an absolute path`);
       }
       if (codeGenerationOption === 'example') {
-        const { repository, npm, sslFolderName, expectedDuration } = examples[exampleIndex];
+        const { repository, npm, expectedDuration } = examples[exampleIndex];
         if (expectedDuration) {
           console.log(`This will take about ${expectedDuration}.`);
         }
@@ -153,15 +187,6 @@ module.exports = function(app) {
               cwd: exampleFolderPath,
               shell: true,
             });
-          }
-
-          // If necessary, copy SSL certificates.
-          if (sslFolderName) {
-            const sslFolderPath = join(exampleFolderPath, sslFolderName);
-            if (!fs.existsSync(sslFolderPath)) {
-              fs.mkdirSync(sslFolderPath);
-            }
-            ['crt', 'key'].forEach((ext) => fs.copyFileSync(join('ssl', `selfsigned.${ext}`), join(sslFolderPath, `server.${ext}`)));
           }
         } else {
           throw new Error('TODO:  handle non-GitHub examples.');
@@ -183,7 +208,7 @@ module.exports = function(app) {
     }
   });
 
-  app.get('/status', (_, res) => {
+  app.get('/status', (_req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.writeHead(200);
     const status = {
@@ -217,7 +242,7 @@ module.exports = function(app) {
         } else {
           child.kill();
         }
-        return await new Promise((resolve, _) => {
+        return await new Promise((resolve, _reject) => {
           let hasResolved = false;
           child.stderr.on('data', (data) => process.stderr.write(data.toString()));
           child.stdout.on('data', (data) => process.stdout.write(data.toString()));

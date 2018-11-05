@@ -27,8 +27,19 @@ const res = {
 runTests();
 
 async function runTests() {
+  // Test coordinator fetch.
+  await getRoutes['/coordinator'](null, res);
+
+  // Test supervisor fetch.
+  await getRoutes['/supervisor.html'](null, res);
+  await getRoutes['/supervisor.css'](null, res);
+  await getRoutes['/supervisor.js'](null, res);
+
+  // Test stats fetch.
+  await postRoutes['/v1/stats'](null, res);
+
   // Test project creation.
-  const projectFolderPath = normalize(join(__dirname, '..', 'build', 'asdf'));
+  const projectFolderPath = normalize(join(__dirname, '..', 'build', 'project-test'));
   const req = {
     body: {
       projectFolderPath,
@@ -71,7 +82,7 @@ async function runTests() {
   // Test the custom front-end.
   await postRoutes['/frontend']({
     body: {
-      frontendCommand: 'node bin/generate_cert.js tesst',
+      frontendCommand: 'node --version',
       frontendFolderPath: 'extensions-hello-world',
       projectFolderPath,
     },

@@ -38,7 +38,7 @@ class Api {
     if (body) {
       request.body = JSON.stringify(body);
     }
-    const url = new URL(path, `https://${this.isLocal ? 'localhost.rig.twitch.tv:3000' : 'api.twitch.tv'}`);
+    const url = new URL(path, this.isLocal ? 'http://localhost:3000' : 'https://api.twitch.tv');
     const response = await fetch(url.toString(), request);
     if (response.status >= 400) {
       const message = 'Cannot access Twitch API.  Try again later.';

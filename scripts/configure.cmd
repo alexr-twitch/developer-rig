@@ -25,23 +25,5 @@ PATH %PATH%;%SystemDrive%\Python27;%ProgramFiles%\nodejs;%ProgramFiles(x86)%\Yar
 CALL "%~dp0do-yarn.cmd"
 IF ERRORLEVEL 1 GOTO done
 
-REM Add localhost.rig.twitch.tv to /etc/hosts.
-SET LOCALHOST=localhost.rig.twitch.tv
-SET HOSTS_FILE=%SystemRoot%\System32\drivers\etc\hosts
-FIND "%LOCALHOST%" "%HOSTS_FILE%" > NUL
-IF ERRORLEVEL 1 (
-	ECHO.>> "%HOSTS_FILE%"
-	ECHO 127.0.0.1 %LOCALHOST%>> "%HOSTS_FILE%"
-)
-FIND "%LOCALHOST%" "%HOSTS_FILE%" > NUL
-IF ERRORLEVEL 1 (
-	ECHO Cannot update "%HOSTS_FILE%".
-	ECHO Add "127.0.0.1 %LOCALHOST%" to "%HOSTS_FILE%" manually.
-	GOTO done
-)
-
-REM Create CA and Developer Rig and localhost SSL certificates.
-CALL "%~dp0make-cert.cmd" -
-
 :done
 IF ERRORLEVEL 1 %PAUSE% TYPE NUL

@@ -34,18 +34,14 @@ if (require.main === module) {
   const root = args["directory"];
   const port = args["port"];
   const options = {
-    host: "localhost.rig.twitch.tv",
-    root: root,
+    host: "localhost",
+    root,
     cache: -1,
-    https: {
-      cert: "./ssl/selfsigned.crt",
-      key: "./ssl/selfsigned.key",
-    },
     logFn: logRequest,
   };
 
   const server = http.createServer(options)
   server.listen(port, function() {
-    console.log("Serving assets from https://" + options.host + ":" + port);
+    console.log("Serving assets from http://" + options.host + ":" + port);
   });
 }

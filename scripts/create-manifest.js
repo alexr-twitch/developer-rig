@@ -12,7 +12,7 @@ const options = [
   { name: "panel_height", alias: "p", type: Number, defaultValue: 300, description: "height of panel extension" },
   { name: "zoom_pixels", alias: "z", type: Number, defaultValue: defaultZoomPixels, description: "base width of extension for calculating zoom (0 no zoom)" },
   { name: "component_size", alias: "c", type: String, defaultValue: "30%x40%", description: "size of video component extension, width by height" },
-  { name: "base_uri", alias: "b", type: String, defaultValue: "https://localhost.rig.twitch.tv:8080", description: "testing base URI of extension assets" },
+  { name: "base_uri", alias: "b", type: String, defaultValue: "http://localhost:8080", description: "testing base URI of extension assets" },
   { name: "author_name", alias: "a", type: String, defaultValue: "twitchrig", description: "extension author name" },
   { name: "support_email", alias: "e", type: String, defaultValue: "support@localhost", description: "extension support email" },
   { name: "name", alias: "n", type: String, defaultValue: `Hello World Panel Extension`, description: "extension name" },
