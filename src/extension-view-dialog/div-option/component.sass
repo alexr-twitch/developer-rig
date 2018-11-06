@@ -31,8 +31,20 @@ $dimension: 70px
   vertical-align: middle
   text-align: center
 
+.extension-type-label > input
+  visibility: hidden
+  position: absolute
+
+.extension-type-label > input + div
+  cursor: pointer
+
+.extension-type-label > input:checked + div
+  color: #7D55C7
+  border-color: #7D55C7
+
 .extension-type-text
-    margin: 3px
-    font-size: 10px
-    text-align: center
-    width: $dimension
+  color: #706A7C
+  margin: 3px
+  font-size: 10px
+  text-align: center
+  width: $dimension
